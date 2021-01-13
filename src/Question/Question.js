@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 const Question = () => {
     return (
-        <section>
+        <section className="question-slide">
             <h1>What do you value most?</h1>
-            <section>
+            <section className="question-options">
                 <Link
                     to='/question'>
                     <button>Gryffindor</button>

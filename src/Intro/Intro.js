@@ -1,10 +1,16 @@
 import './Intro.scss'
+import sortingHatImg from './sortingHat.png'
 import { Link } from 'react-router-dom'
 
 const Intro = () => {
     return (
-        <section>
-            <h1>The Sorting Hat's Song</h1>
+        <section className="intro-section">
+            <h1>The Hogwarts Sorting Hat's Song</h1>
+            <img 
+                src={sortingHatImg}
+                alt="Hogwarts Sorting Hat"
+                className="sorting-hat-img"
+            />
             <p>
                 Oh, you may not think I'm pretty,
                 But don't judge on what you see,

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Name = () => {
     return (
-        <form>
+        <form className="name-form">
             <input
                 type="text"
                 name="name"

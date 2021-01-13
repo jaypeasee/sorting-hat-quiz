@@ -1,5 +1,6 @@
 import './Result.scss'
 import mcgonagallImg from './mcgonagall.png'
+import { getAllCharacters } from '../utilities'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -12,7 +13,12 @@ class Result extends Component {
     }
 
     componentDidMount() {
-        
+        getAllCharacters()
+            .then(data => this.setState({
+                houseMates: data.filter(character => {
+                    return character.house === this.props.userHouse.name
+                })
+            }))
     }
 
     render() {

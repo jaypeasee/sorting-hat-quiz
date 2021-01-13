@@ -121,7 +121,7 @@ class App extends Component {
               return (
                 <Result 
                   resetQuiz={this.resetQuiz}
-                  userHouse={this.userHouse}
+                  userHouse={this.state.userHouse}
                 />
               )
             }}

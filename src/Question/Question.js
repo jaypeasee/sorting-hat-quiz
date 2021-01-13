@@ -9,14 +9,13 @@ class Question extends Component {
             answerValues: []
         }
     }
-
+    
     componentDidMount() {
         this.updateAnswerValues()
     }
 
     updateAnswerValues = () => {
         const { hogwartsHouses, questionNumber } = this.props
-        console.log(this.props.questionNumber)
         const currentAnswers = hogwartsHouses.map(house => {
             return house[`value${questionNumber}`]
         })
@@ -28,11 +27,12 @@ class Question extends Component {
     handleAnswerSubmit = async (selectedHouse) => {
         await this.props.tallyQuestionResults(selectedHouse)
         this.updateAnswerValues()
+        this.props.determineUserHouse()
     }
 
     render() {
         const { answerValues } = this.state
-        const { questionNumber, tallyQuestionResults } = this.props
+        const { questionNumber } = this.props
         return (
             <section className="question-slide">
                 <h1>What do you value most?</h1>

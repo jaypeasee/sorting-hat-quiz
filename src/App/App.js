@@ -68,7 +68,9 @@ class App extends Component {
             render={() => {
               return (
                 <Question 
-                  tallyQuestionResults={this.tallyQuestionResults}
+                  tallyQuestionResults={ this.tallyQuestionResults }
+                  hogwartsHouses={ this.state.hogwartsHouses }
+                  questionNumber={ this.state.questionResults.length + 1}
                 />
               )
             }}

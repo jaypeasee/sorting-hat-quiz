@@ -32,6 +32,12 @@ class App extends Component {
     })
   }
 
+  tallyQuestionResults = (houseName) => {
+    this.setState({
+      questionResults: [...questionResults, houseName]
+    })
+  }
+
   render() {
     return (
       <main className="app">
@@ -61,7 +67,9 @@ class App extends Component {
             path="/question"
             render={() => {
               return (
-                <Question />
+                <Question 
+                  tallyQuestionResults={this.tallyQuestionResults}
+                />
               )
             }}
           />

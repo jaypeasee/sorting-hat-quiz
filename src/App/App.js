@@ -1,4 +1,5 @@
 import './App.scss'
+import { getHogwartsHouses } from '../utilities'
 import Intro from '../Intro/Intro'
 import Name from '../Name/Name'
 import Question from '../Question/Question'
@@ -18,8 +19,12 @@ class App extends Component {
     }
   }
 
-  
-
+  componentDidMount() {
+    getHogwartsHouses()
+      .then(data => this.setState({
+        hogwartsHouses: data
+      }))
+  }
 
   render() {
     return (

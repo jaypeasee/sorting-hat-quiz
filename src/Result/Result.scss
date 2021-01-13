@@ -1,0 +1,18 @@
+@import '../mixins.scss';
+
+.result-page {
+    @include column-center;
+}
+
+.result-announcement {
+    @include row-wrap-around;
+}
+
+.announcement-txt {
+    @include column-center;
+    width: 50%;
+}
+
+.mcgonagall-img {
+    width: 40%;
+}

@@ -1,0 +1,10 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+h1 {
+  font-family: $heading-font;
+}
+
+.app {
+  @include column-center;
+}

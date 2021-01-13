@@ -16,6 +16,7 @@ class Question extends Component {
 
     updateAnswerValues = () => {
         const { hogwartsHouses, questionNumber } = this.props
+        console.log(this.props.questionNumber)
         const currentAnswers = hogwartsHouses.map(house => {
             return house[`value${questionNumber}`]
         })
@@ -24,9 +25,9 @@ class Question extends Component {
         })
     }
 
-    handleAnswerSubmit = (selectedHouse) => {
+    handleAnswerSubmit = async (selectedHouse) => {
+        await this.props.tallyQuestionResults(selectedHouse)
         this.updateAnswerValues()
-        this.props.tallyQuestionResults(selectedHouse)
     }
 
     render() {

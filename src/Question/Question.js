@@ -22,25 +22,38 @@ class Question extends Component {
 
     render() {
         const { answerValues } = this.state
+        const { questionNumber, tallyQuestionResults } = this.props
         return (
             <section className="question-slide">
                 <h1>What do you value most?</h1>
                 <section className="question-options">
                     <Link
-                        to='/question'>
-                        <button>{answerValues[0]}</button>
+                        to={questionNumber < 3 ? '/question' : '/result'}
+                    >
+                        <button
+                            onClick={ () => tallyQuestionResults("Gryffindor") }
+                        >{answerValues[0]}</button>
                     </Link>
                     <Link
-                        to='/question'>
-                        <button>{answerValues[1]}</button>
+                        to={questionNumber < 3 ? '/question' : '/result'}
+                    >
+                        <button
+                            onClick={ () => tallyQuestionResults("Hufflepuff") }
+                        >{answerValues[1]}</button>
                     </Link>
                     <Link
-                        to='/question'>
-                        <button>{answerValues[2]}</button>
+                        to={questionNumber < 3 ? '/question' : '/result'}
+                    >
+                        <button
+                            onClick={ () => tallyQuestionResults("Slytherin") }
+                        >{answerValues[2]}</button>
                     </Link>
                     <Link
-                        to='/question'>
-                        <button>{answerValues[3]}</button>
+                        to={questionNumber < 3 ? '/question' : '/result'}
+                    >
+                        <button
+                            onClick={ () => tallyQuestionResults("Ravenclaw") }
+                        >{answerValues[3]}</button>
                     </Link>
                 </section>
             </section>

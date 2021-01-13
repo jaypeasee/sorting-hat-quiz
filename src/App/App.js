@@ -39,35 +39,36 @@ class App extends Component {
   }
 
   determineUserHouse = () => {
-    let gryffindors = {house: "Gryffindor", count: 0}
-    let hufflepuffs = {house: "Hufflepuff", count: 0}
-    let slytherins = {house: "Slytherin", count: 0}
-    let ravenclaws = {house: "Ravenclaw", count: 0}
+    let houseCounts = [
+      {house: "Gryffindor", count: 0},
+      {house: "Hufflepuff", count: 0},
+      {house: "Slytherin", count: 0},
+      {house: "Ravenclaw", count: 0}
+    ]
+
     this.state.questionResults.forEach(house => {
       if (house === "Gryffindor") {
-        gryffindors.count += 1
+        houseCounts[0].count += 1
       } else if (house === "Hufflepuff") {
-        hufflepuffs.count += 1
+        houseCounts[1].count += 1
       } else if (house === "Slytherin") {
-        slytherins.count += 1
+        houseCounts[2].count += 1
       } else if (house === "Ravenclaw") {
-        ravenclaws.count += 1
+        houseCounts[3].count += 1
       }
     })
-    const houses = [gryffindors, hufflepuffs, slytherins, ravenclaws]
-    const sortedHouses = houses.sort((house1, house2) => {
+
+    const sortedHouses = houseCounts.sort((house1, house2) => {
       return house2.count - house1.count
     })
 
-    const userHouseDetails = this.state.hogwartsHouses.find(house => {
-      return house.name === sortedHouses[0].house
-    })
-
     this.setState({
-      userHouse: userHouseDetails
+      userHouse: this.state.hogwartsHouses.find(house => {
+        return house.name === sortedHouses[0].house
+      })
     })
   }
-
+  
   resetQuiz = () => {
     this.setState({
       userHouse: {},

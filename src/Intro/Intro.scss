@@ -1,0 +1,14 @@
+@import '../mixins.scss';
+
+.intro-section {
+    @include column-center;
+}
+
+.intro-content {
+    @include row-wrap-around;
+}
+
+.sorting-song {
+    @include column;
+    width: 50%;
+}

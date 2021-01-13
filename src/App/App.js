@@ -38,6 +38,14 @@ class App extends Component {
     })
   }
 
+  resetQuiz = () => {
+    this.setState({
+      userHouse: {},
+      userName: "",
+      questionResults: [],
+    })
+  }
+
   render() {
     return (
       <main className="app">
@@ -80,7 +88,9 @@ class App extends Component {
             path="/result"
             render={() => {
               return (
-                <Result />
+                <Result 
+                  resetQuiz={this.resetQuiz}
+                />
               )
             }}
           />

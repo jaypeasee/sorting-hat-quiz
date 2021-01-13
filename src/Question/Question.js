@@ -11,6 +11,10 @@ class Question extends Component {
     }
 
     componentDidMount() {
+        this.updateAnswerValues()
+    }
+
+    updateAnswerValues = () => {
         const { hogwartsHouses, questionNumber } = this.props
         const currentAnswers = hogwartsHouses.map(house => {
             return house[`value${questionNumber}`]
@@ -18,6 +22,11 @@ class Question extends Component {
         this.setState({
             answerValues: currentAnswers
         })
+    }
+
+    handleAnswerSubmit = (selectedHouse) => {
+        this.updateAnswerValues()
+        this.props.tallyQuestionResults(selectedHouse)
     }
 
     render() {
@@ -28,31 +37,31 @@ class Question extends Component {
                 <h1>What do you value most?</h1>
                 <section className="question-options">
                     <Link
-                        to={questionNumber < 3 ? '/question' : '/result'}
+                        to={questionNumber < 4 ? '/question' : '/result'}
                     >
                         <button
-                            onClick={ () => tallyQuestionResults("Gryffindor") }
+                            onClick={ () => this.handleAnswerSubmit("Gryffindor") }
                         >{answerValues[0]}</button>
                     </Link>
                     <Link
-                        to={questionNumber < 3 ? '/question' : '/result'}
+                        to={questionNumber < 4 ? '/question' : '/result'}
                     >
                         <button
-                            onClick={ () => tallyQuestionResults("Hufflepuff") }
+                            onClick={ () => this.handleAnswerSubmit("Hufflepuff") }
                         >{answerValues[1]}</button>
                     </Link>
                     <Link
-                        to={questionNumber < 3 ? '/question' : '/result'}
+                        to={questionNumber < 4 ? '/question' : '/result'}
                     >
                         <button
-                            onClick={ () => tallyQuestionResults("Slytherin") }
+                            onClick={ () => this.handleAnswerSubmit("Slytherin") }
                         >{answerValues[2]}</button>
                     </Link>
                     <Link
-                        to={questionNumber < 3 ? '/question' : '/result'}
+                        to={questionNumber < 4 ? '/question' : '/result'}
                     >
                         <button
-                            onClick={ () => tallyQuestionResults("Ravenclaw") }
+                            onClick={ () => this.handleAnswerSubmit("Ravenclaw") }
                         >{answerValues[3]}</button>
                     </Link>
                 </section>

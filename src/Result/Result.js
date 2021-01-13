@@ -2,7 +2,7 @@ import './Result.scss'
 import mcgonagallImg from './mcgonagall.png'
 import { Link } from 'react-router-dom'
 
-const Result = () => {
+const Result = props => {
     return (
         <section className="result-page">
             <section className="result-announcement">
@@ -26,7 +26,9 @@ const Result = () => {
             <Link
                 to="/"
             >
-                <button>Retake The Quiz</button>
+                <button
+                    onClick={props.resetQuiz}
+                >Retake The Quiz</button>
             </Link>
             
         </section>

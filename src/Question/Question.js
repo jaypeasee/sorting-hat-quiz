@@ -21,25 +21,26 @@ class Question extends Component {
     }
 
     render() {
+        const { answerValues } = this.state
         return (
             <section className="question-slide">
                 <h1>What do you value most?</h1>
                 <section className="question-options">
                     <Link
                         to='/question'>
-                        <button>Gryffindor</button>
+                        <button>{answerValues[0]}</button>
                     </Link>
                     <Link
                         to='/question'>
-                        <button>Hufflepuff</button>
+                        <button>{answerValues[1]}</button>
                     </Link>
                     <Link
                         to='/question'>
-                        <button>Slytherin</button>
+                        <button>{answerValues[2]}</button>
                     </Link>
                     <Link
                         to='/question'>
-                        <button>Ravenclaw</button>
+                        <button>{answerValues[3]}</button>
                     </Link>
                 </section>
             </section>

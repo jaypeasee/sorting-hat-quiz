@@ -11,9 +11,16 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      
+      userHouse: {},
+      userName: "",
+      questionResults: [],
+      hogwartsHouses: []
     }
   }
+
+  
+
+
   render() {
     return (
       <main className="app">

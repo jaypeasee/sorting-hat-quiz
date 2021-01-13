@@ -10,19 +10,34 @@ class Name extends Component {
         }
     }
 
+    updateNameInput = (event) => {
+        this.setState({
+            nameInput: event.target.value
+        })
+    }
+
     render() {
+        const { setUserName } = this.props
         return (
-            <form className="name-form">
+            <form 
+                className="name-form"
+                onSubmit={ () => setUserName(this.state.nameInput) }
+            >
                 <h1>What's Your Name?</h1>
                 <input
                     type="text"
                     name="name"
                     placeholder="Your Name"
+                    onChange={ this.updateNameInput }
+                    value={ this.state.nameInput }
                 />
                 <Link
                     to="/question"
                 >
-                    <button>Enroll!</button>
+                    <button
+                        onClick={ () => setUserName(this.state.nameInput) }
+                    >
+                    Enroll!</button>
                 </Link>
             </form>
         )

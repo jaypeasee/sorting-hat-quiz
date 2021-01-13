@@ -34,7 +34,7 @@ class App extends Component {
 
   tallyQuestionResults = (houseName) => {
     this.setState({
-      questionResults: [...questionResults, houseName]
+      questionResults: [...this.state.questionResults, houseName]
     })
   }
 

@@ -5,13 +5,17 @@ import { Link } from 'react-router-dom'
 const Result = () => {
     return (
         <section className="result-page">
-            <h1>CONGRATS JP, YOU BELONG TO RAVENCLAW</h1>
-            <img 
+            <section className="result-announcement">
+                <div className="announcement-txt">
+                    <h1>CONGRATS JP, YOU BELONG TO RAVENCLAW</h1>
+                    <p>This is the description about the house</p>
+                </div>
+                <img 
                 src={mcgonagallImg}
                 alt="Minerva McGonagall"
                 className="mcgonagall-img"
-            />
-            <p>This is the description about the house</p>
+                />
+            </section>
             <section>
                 <h2>Other members of this house</h2>
                 <ul>

@@ -26,6 +26,12 @@ class App extends Component {
       }))
   }
 
+  setUserName = (enteredName) => {
+    this.setState({
+      userName: enteredName
+    })
+  }
+
   render() {
     return (
       <main className="app">
@@ -44,7 +50,9 @@ class App extends Component {
             path="/your-name"
             render={() => {
               return (
-                <Name />
+                <Name 
+                  setUserName={this.setUserName}
+                />
               )
             }}
           />

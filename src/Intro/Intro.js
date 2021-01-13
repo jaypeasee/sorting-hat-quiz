@@ -1,7 +1,5 @@
 import './Intro.scss'
-import Name from '../Name/Name'
 import { Link } from 'react-router-dom'
-
 
 const Intro = () => {
     return (

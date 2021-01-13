@@ -30,52 +30,7 @@ const App = () => {
         />
         <Route 
           exact
-          path="/question-1"
-          render={() => {
-            return (
-              <Question />
-            )
-          }}
-        />
-        <Route 
-          exact
-          path="/question-2"
-          render={() => {
-            return (
-              <Question />
-            )
-          }}
-        />
-        <Route 
-          exact
-          path="/question-3"
-          render={() => {
-            return (
-              <Question />
-            )
-          }}
-        />
-        <Route 
-          exact
-          path="/question-4"
-          render={() => {
-            return (
-              <Question />
-            )
-          }}
-        />
-        <Route 
-          exact
-          path="/question-5"
-          render={() => {
-            return (
-              <Question />
-            )
-          }}
-        />
-        <Route 
-          exact
-          path="/question-6"
+          path="/question"
           render={() => {
             return (
               <Question />

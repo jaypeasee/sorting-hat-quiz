@@ -3,7 +3,6 @@
 
 .gryffindor {
     @include column-center;
-    @include result-section;
     color: $gold;
     background-color: $red;
 }
@@ -17,7 +16,7 @@
 
 .hufflepuff {
     @include column-center;
-    @include result-section;
+    height: 100%;
     color: $yellow;
     background-color: $black;
 }
@@ -26,12 +25,11 @@
     @include btn;
     color: $black;
     background-color: $yellow;
-    border-color: $black;
+    border-color: $yellow;
 }
 
 .ravenclaw {
     @include column-center;
-    @include result-section;
     color: $bronze;
     background-color: $blue;
 }
@@ -45,7 +43,6 @@
 
 .slytherin {
     @include column-center;
-    @include result-section;
     color: $silver;
     background-color: $green;
 }
@@ -76,8 +73,4 @@
 
 .restart-btn-anchor {
     @include btn-anchor
-}
-
-.restart-btn {
-    @include btn;
 }

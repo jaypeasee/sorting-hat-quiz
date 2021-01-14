@@ -1,10 +1,10 @@
 import './App.scss'
-import { getHogwartsHouses } from '../utilities'
 import Intro from '../Intro/Intro'
 import Name from '../Name/Name'
 import Question from '../Question/Question'
 import Result from '../Result/Result'
 import Error from '../Error/Error'
+import { getHogwartsHouses } from '../utilities'
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 

@@ -32,7 +32,11 @@ class Result extends Component {
 
     render() {
         const { userName } = this.props
-        const { name, founder, mascot, headOfHouse, value1, value2, value3, value4, color1, color2, houseGhost } = this.props.userHouse
+        const {
+            name, founder, mascot, headOfHouse, houseGhost,
+            value1, value2, value3, value4, color1, color2, 
+        } = this.props.userHouse
+        
         return (
             <section className="result-page">
                 <section className="result-announcement">

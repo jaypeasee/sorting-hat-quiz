@@ -9,7 +9,6 @@ class Name extends Component {
             nameInput: "",
             formInvalid: false
         }
-        this.history = this.props.history
     }
 
     updateNameInput = (event) => {

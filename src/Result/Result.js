@@ -1,4 +1,5 @@
 import './Result.scss'
+import Error from '../Error/Error'
 import mcgonagallImg from './mcgonagall.png'
 import { getAllCharacters } from '../utilities'
 import React, { Component } from 'react'
@@ -9,6 +10,7 @@ class Result extends Component {
         super(props)
         this.state = {
             houseMates: [],
+            resultError: false
         }
     }
 
@@ -17,8 +19,10 @@ class Result extends Component {
         getAllCharacters()
             .then(data => this.setState({
                 houseMates: this.filterHouseMateNames(data),
-                primaryColor: color1.toLowerCase(),
-                secondaryColor: color2.toLowerCase()
+                resultError: false
+            }))
+            .catch(error => this.setState({
+                resultError: true
             }))
     }
 
@@ -37,11 +41,11 @@ class Result extends Component {
             name, founder, mascot, headOfHouse, houseGhost,
             value1, value2, value3, value4, color1, color2, 
         } = this.props.userHouse
-        const { primaryColor, secondaryColor } = this.state
         return (
             <section 
-                className={name.toLowerCase()}
+                className={name && name.toLowerCase()}
             >
+                {!this.state.resultError && name &&
                 <section className="result-announcement">
                     <div className="announcement-txt">
                         <h1>{`${name.toUpperCase()}!`}</h1>
@@ -74,7 +78,11 @@ class Result extends Component {
                         alt="Minerva McGonagall"
                         className="mcgonagall-img"
                     />
-                </section>
+                </section>}
+                {this.state.resultError || !this.props.userHouse &&
+                <Error 
+                    errorMessage="Sorry, something went wrong"
+                />}
             </section>
         )
     }

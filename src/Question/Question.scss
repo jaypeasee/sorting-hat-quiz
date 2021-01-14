@@ -2,8 +2,22 @@
 
 .question-slide {
     @include column-center;
+    margin: 5%;
+}
+
+.question-slide h1 {
+    font-size: 2em;
 }
 
 .question-options {
     @include column-center;
+}
+
+.question-btn-anchor {
+    margin: 5%;
+    width: 300px;
+}
+
+.question-btn {
+    @include button;
 }

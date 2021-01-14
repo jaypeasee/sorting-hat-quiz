@@ -17,7 +17,12 @@
     justify-content: space-around;
 }
 
-@mixin button {
+@mixin btn-anchor {
+    margin: 5%;
+    width: 300px;
+}
+
+@mixin btn {
     background-color: $primary-gold;
     border: 2px solid $primary-maroon;
     border-radius: 20px;
@@ -27,6 +32,7 @@
     box-shadow: 5px 5px 5px black;
     font-size: 1.25em;
     width: 100%;
+    padding: 2%;
     &:hover {
         transform: scale(1.05);
         transition-duration: 0.4s;

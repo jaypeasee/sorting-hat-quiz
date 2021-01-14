@@ -14,10 +14,9 @@
 }
 
 .question-btn-anchor {
-    margin: 5%;
-    width: 300px;
+    @include btn-anchor
 }
 
 .question-btn {
-    @include button;
+    @include btn;
 }

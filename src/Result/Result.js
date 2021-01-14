@@ -54,9 +54,11 @@ class Result extends Component {
                     <p>Not happy with the result?</p>
                     <Link
                         to="/"
+                        className="restart-btn-anchor"
                     >
                     <button
                         onClick={this.props.resetQuiz}
+                        className="restart-btn"
                     >Get Sorted Again</button>
                 </Link>
                     </div>

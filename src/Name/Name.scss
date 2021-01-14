@@ -15,19 +15,14 @@
 }
 
 .name-btn-anchor {
-    width: 340px;
-    margin: 2.5%;
+    @include btn-anchor
 }
 
 .name-btn {
-    @include button;
-    width: 100%;
-    padding: 2%;
+    @include btn;
 }
 
 .disabled-name-btn {
-    @include button;
-    width: 100%;
-    padding: 2%;
+    @include btn;
     opacity: .5;
 }

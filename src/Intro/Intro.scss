@@ -19,8 +19,12 @@
     font-size: 2em;
 }
 
+.get-sorted-btn-anchor {
+    @include btn-anchor;
+}
+
 .get-sorted-btn {
-    @include button;
+    @include btn;
     width: 300px;
     padding: 4%;
     font-size: 1.25em;

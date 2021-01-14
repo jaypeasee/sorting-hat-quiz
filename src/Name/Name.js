@@ -1,13 +1,15 @@
 import './Name.scss'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Name extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            nameInput: ""
+            nameInput: "",
+            formInvalid: false
         }
+        this.history = this.props.history
     }
 
     updateNameInput = (event) => {
@@ -16,12 +18,26 @@ class Name extends Component {
         })
     }
 
+    handleNameSubmit = (event) => {
+        event.preventDefault()
+        if (!this.state.nameInput) {
+            this.setState({
+                formInvalid: true
+            })
+        } else {
+            this.props.setUserName(this.state.nameInput)
+            this.setState({
+                formInvalid: false
+            })
+            this.props.history.push('/question')
+        }
+    }
+
     render() {
-        const { setUserName } = this.props
         return (
             <form 
                 className="name-form"
-                onSubmit={ () => setUserName(this.state.nameInput) }
+                onSubmit={ this.handleNameSubmit }
             >
                 <h1>What's Your Name?</h1>
                 <input
@@ -33,29 +49,17 @@ class Name extends Component {
                     className="name-input"
                 />
                 {this.state.nameInput &&
-                <Link
-                    to="/question"
-                    className="name-btn-anchor"
-                >
-                    <button
-                        className="name-btn"
-                        onClick={ () => setUserName(this.state.nameInput) }
-                    >
-                    Enroll!</button>
-                </Link>}
+                <button className="name-btn">
+                Enroll!</button>
+                }
                 {!this.state.nameInput &&
-                <Link
-                    className="name-btn-anchor"
-                >
-                    <button
-                        className="disabled-name-btn"
-                        onClick={ () => setUserName(this.state.nameInput) }
-                    >
-                    Enroll!</button>
-                </Link>}
+                <button className="disabled-name-btn">
+                Enroll!</button>}
+                {this.state.formInvalid && 
+                <p>Please enter your name before continuing</p>}
             </form>
         )
     }
 }
 
-export default Name
+export default withRouter(Name)

@@ -23,6 +23,14 @@
 }
 
 .disabled-name-btn {
-    @include btn;
+    background-color: $primary-gold;
+    border: 2px solid $primary-maroon;
+    border-radius: 20px;
+    font-family: $primary-font;
     opacity: .5;
+    box-shadow: 5px 5px 5px black;
+    font-size: 1.25em;
+    padding: 2%;
+    width: 100%;
+    outline: none;
 }

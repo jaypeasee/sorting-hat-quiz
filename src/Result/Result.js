@@ -15,13 +15,12 @@ class Result extends Component {
     }
 
     componentDidMount() {
-        const {color1, color2} = this.props.userHouse
         getAllCharacters()
             .then(data => this.setState({
                 houseMates: this.filterHouseMateNames(data),
                 resultError: false
             }))
-            .catch(error => this.setState({
+            .catch(this.setState({
                 resultError: true
             }))
     }
@@ -81,7 +80,7 @@ class Result extends Component {
                 </section>}
                 {this.state.resultError || !this.props.userHouse &&
                 <Error 
-                    errorMessage="Sorry, something went wrong"
+                    errorMessage="Sorry, something went wrong."
                 />}
             </section>
         )

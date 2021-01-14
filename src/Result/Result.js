@@ -15,9 +15,12 @@ class Result extends Component {
     }
 
     componentDidMount() {
+        const {color1, color2} = this.props.userHouse
         getAllCharacters()
             .then(data => this.setState({
-                houseMates: this.filterHouseMateNames(data)
+                houseMates: this.filterHouseMateNames(data),
+                primaryColor: color1.toLowerCase(),
+                secondaryColor: color2.toLowerCase()
             }))
     }
 

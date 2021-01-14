@@ -13,6 +13,7 @@
 
 @mixin row-wrap-around {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }

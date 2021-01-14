@@ -1,9 +1,19 @@
-@import '../variables.scss';
+@import '../mixins.scss';
 
 .error-section {
-    padding: 5%;
+    width: 100%;
+    padding: 2%;
+    @include column-center;
 }
 
 .error-section h1 {
     font-size: 2em;
+}
+
+.error-btn-anchor {
+    width: 350px;
+}
+
+.error-btn {
+    @include btn;
 }

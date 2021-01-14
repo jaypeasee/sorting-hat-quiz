@@ -18,6 +18,7 @@ class Name extends Component {
     }
 
     handleNameSubmit = (event) => {
+        console.log(this.props.history)
         event.preventDefault()
         if (!this.state.nameInput) {
             this.setState({

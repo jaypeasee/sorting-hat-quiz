@@ -15,14 +15,19 @@ class App extends Component {
       userHouse: "",
       userName: "",
       questionResults: [],
-      hogwartsHouses: []
+      hogwartsHouses: [],
+      houseFetchError: ""
     }
   }
 
   componentDidMount() {
     getHogwartsHouses()
       .then(data => this.setState({
-        hogwartsHouses: data
+        hogwartsHouses: data,
+        houseFetchError: ""
+      }))
+      .catch(error => this.setState({
+        houseFetchError: error
       }))
   }
 
@@ -58,7 +63,6 @@ class App extends Component {
   resetQuiz = () => {
     this.setState({
       userHouse: {},
-      userName: "",
       questionResults: [],
     })
   }
@@ -66,6 +70,7 @@ class App extends Component {
   render() {
     return (
       <main className="app">
+        {!this.state.houseFetchError &&
         <Switch>
           <Route
             exact
@@ -118,11 +123,18 @@ class App extends Component {
             path="/"
             render={() => {
               return (
-                <Error />
+                <Error 
+                  errorMessage="Oops! This page does not exist."
+                />
               )
             }}
           />
-        </Switch>
+        </Switch>}
+        {this.state.houseFetchError &&
+        <Error 
+          errorMessage="Sorry, Something went wrong."
+        />
+        }
       </main>
     )
   }

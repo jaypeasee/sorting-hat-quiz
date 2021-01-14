@@ -1,7 +1,17 @@
 @import './variables.scss';
+
 body {
   margin: 0;
   font-family: $primary-font;
   background-color: $primary-dark;
-  color: #e8eae6;
+  height: 100%;
+  color: $primary-gold;
+}
+
+#blockColorblindContent {
+  display: none;
+}
+
+html {
+  height: 100vh;
 }

@@ -1,4 +1,5 @@
 import './Result.scss'
+import Error from '../Error/Error'
 import mcgonagallImg from './mcgonagall.png'
 import { getAllCharacters } from '../utilities'
 import React, { Component } from 'react'
@@ -9,15 +10,18 @@ class Result extends Component {
         super(props)
         this.state = {
             houseMates: [],
-            primaryColor: "",
-            secondaryColor: ""
+            resultError: false
         }
     }
 
     componentDidMount() {
         getAllCharacters()
             .then(data => this.setState({
-                houseMates: this.filterHouseMateNames(data)
+                houseMates: this.filterHouseMateNames(data),
+                resultError: false
+            }))
+            .catch(this.setState({
+                resultError: true
             }))
     }
 
@@ -36,9 +40,11 @@ class Result extends Component {
             name, founder, mascot, headOfHouse, houseGhost,
             value1, value2, value3, value4, color1, color2, 
         } = this.props.userHouse
-        
         return (
-            <section className="result-page">
+            <section 
+                className={name && name.toLowerCase()}
+            >
+                {!this.state.resultError && name &&
                 <section className="result-announcement">
                     <div className="announcement-txt">
                         <h1>{`${name.toUpperCase()}!`}</h1>
@@ -55,9 +61,9 @@ class Result extends Component {
                     <ul>
                         {this.state.houseMates}
                     </ul>
-                    <p>Not happy with the result?</p>
+                    <p className="restart-txt">Not happy with the result?</p>
                     <Link
-                        to="/"
+                        to="/question"
                         className="restart-btn-anchor"
                     >
                     <button
@@ -71,7 +77,11 @@ class Result extends Component {
                         alt="Minerva McGonagall"
                         className="mcgonagall-img"
                     />
-                </section>
+                </section>}
+                {this.state.resultError || !this.props.userHouse &&
+                <Error 
+                    errorMessage="Sorry, something went wrong."
+                />}
             </section>
         )
     }

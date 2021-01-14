@@ -1,10 +1,10 @@
 import './App.scss'
-import { getHogwartsHouses } from '../utilities'
 import Intro from '../Intro/Intro'
 import Name from '../Name/Name'
 import Question from '../Question/Question'
 import Result from '../Result/Result'
 import Error from '../Error/Error'
+import { getHogwartsHouses } from '../utilities'
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
@@ -40,11 +40,7 @@ class App extends Component {
 
   determineUserHouse = () => {
     const houseCount = this.state.questionResults.reduce((houseDetails, house) => {
-      if (!houseDetails[house]) {
-        houseDetails[house] = 1
-      } else {
-        houseDetails[house] += 1
-      }
+      !houseDetails[house] ? houseDetails[house] = 1 : houseDetails[house] += 1
       return houseDetails
     }, {})
 
@@ -83,10 +79,10 @@ class App extends Component {
           <Route 
             exact
             path="/your-name"
-            render={() => {
+            component={() => {
               return (
                 <Name 
-                  setUserName={this.setUserName}
+                  setUserName={ this.setUserName }
                 />
               )
             }}
@@ -94,12 +90,12 @@ class App extends Component {
           <Route 
             exact
             path="/question"
-            render={() => {
+            component={() => {
               return (
                 <Question 
                   tallyQuestionResults={ this.tallyQuestionResults }
                   hogwartsHouses={ this.state.hogwartsHouses }
-                  questionNumber={ this.state.questionResults.length + 1}
+                  questionNumber={ this.state.questionResults.length + 1 }
                   determineUserHouse={ this.determineUserHouse }
                 />
               )
@@ -111,8 +107,9 @@ class App extends Component {
             render={() => {
               return (
                 <Result 
-                  resetQuiz={this.resetQuiz}
-                  userHouse={this.state.userHouse}
+                  resetQuiz={ this.resetQuiz }
+                  userHouse={ this.state.userHouse }
+                  userName={ this.state.userName }
                 />
               )
             }}

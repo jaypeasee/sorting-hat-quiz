@@ -49,8 +49,11 @@ const Intro = () => {
                     className="sorting-hat-img"
                 />
             </section>
-            <Link to="/your-name">
-                <button>Get Sorted</button>
+            <Link 
+                to="/your-name"
+                className="get-sorted-btn-anchor"
+            >
+                <button className="get-sorted-btn">Get Sorted</button>
             </Link>
         </section>
     )

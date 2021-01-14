@@ -17,40 +17,61 @@ class Result extends Component {
     componentDidMount() {
         getAllCharacters()
             .then(data => this.setState({
-                houseMates: data.filter(character => {
-                    return character.house === this.props.userHouse.name
-                })
+                houseMates: this.filterHouseMateNames(data)
             }))
     }
 
+    filterHouseMateNames = (characters) => {
+        const houseMateDetails = characters.filter(char => {
+            return char.house === this.props.userHouse.name
+        })
+        return houseMateDetails.map(char => {
+            return <li>{char.name}</li>
+        })
+    }
+
     render() {
+        const { userName } = this.props
+        const {
+            name, founder, mascot, headOfHouse, houseGhost,
+            value1, value2, value3, value4, color1, color2, 
+        } = this.props.userHouse
+        
         return (
             <section className="result-page">
                 <section className="result-announcement">
                     <div className="announcement-txt">
-                        <h1>CONGRATS JP, YOU BELONG TO RAVENCLAW</h1>
-                        <p>This is the description about the house</p>
-                    </div>
-                    <img 
-                    src={mcgonagallImg}
-                    alt="Minerva McGonagall"
-                    className="mcgonagall-img"
-                    />
-                </section>
-                <section>
-                    <h2>Other members of this house</h2>
+                        <h1>{`${name.toUpperCase()}!`}</h1>
+                        <p>
+                            {`Welcome to ${name}, ${userName}!
+                            Founded by the ${mascot}, ${founder}, and led by Professor ${headOfHouse},
+                            ${name}s are known for their ${value1.toLowerCase()}, ${value2.toLowerCase()}, 
+                            ${value3.toLowerCase()}, and ${value4.toLowerCase()}. Walking through the common, 
+                            you will see lots of ${color1.toLowerCase()} and ${color2.toLowerCase()} 
+                            and ${houseGhost}, the house ghost floating through walls.
+                            While at Hogwarts, your fellow ${name}s will be your family.`}
+                        </p>
+                        <h2>{`Your fellow ${name}s`}</h2>
                     <ul>
-
+                        {this.state.houseMates}
                     </ul>
-                </section>
-                <p>Not happy with the result?</p>
-                <Link
-                    to="/"
-                >
+                    <p>Not happy with the result?</p>
+                    <Link
+                        to="/"
+                        className="restart-btn-anchor"
+                    >
                     <button
                         onClick={this.props.resetQuiz}
-                    >Retake The Quiz</button>
+                        className="restart-btn"
+                    >Get Sorted Again</button>
                 </Link>
+                    </div>
+                    <img 
+                        src={mcgonagallImg}
+                        alt="Minerva McGonagall"
+                        className="mcgonagall-img"
+                    />
+                </section>
             </section>
         )
     }

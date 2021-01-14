@@ -1,4 +1,5 @@
 import './App.scss'
+import { getHogwartsHouses } from '../utilities'
 import Intro from '../Intro/Intro'
 import Name from '../Name/Name'
 import Question from '../Question/Question'
@@ -11,9 +12,61 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      
+      userHouse: "",
+      userName: "",
+      questionResults: [],
+      hogwartsHouses: []
     }
   }
+
+  componentDidMount() {
+    getHogwartsHouses()
+      .then(data => this.setState({
+        hogwartsHouses: data
+      }))
+  }
+
+  setUserName = (enteredName) => {
+    this.setState({
+      userName: enteredName
+    })
+  }
+
+  tallyQuestionResults = (houseName) => {
+    this.setState({
+      questionResults: [...this.state.questionResults, houseName]
+    })
+  }
+
+  determineUserHouse = () => {
+    const houseCount = this.state.questionResults.reduce((houseDetails, house) => {
+      if (!houseDetails[house]) {
+        houseDetails[house] = 1
+      } else {
+        houseDetails[house] += 1
+      }
+      return houseDetails
+    }, {})
+
+    const sortedHouses = Object.keys(houseCount).sort((house1, house2) => {
+      return houseCount[house2] > houseCount[house1] ? 1 : -1
+    })
+
+    this.setState({
+      userHouse: this.state.hogwartsHouses.find(house => {
+        return house.name === sortedHouses[0]
+      })
+    })
+  }
+  
+  resetQuiz = () => {
+    this.setState({
+      userHouse: {},
+      userName: "",
+      questionResults: [],
+    })
+  }
+
   render() {
     return (
       <main className="app">
@@ -32,7 +85,9 @@ class App extends Component {
             path="/your-name"
             render={() => {
               return (
-                <Name />
+                <Name 
+                  setUserName={this.setUserName}
+                />
               )
             }}
           />
@@ -41,7 +96,12 @@ class App extends Component {
             path="/question"
             render={() => {
               return (
-                <Question />
+                <Question 
+                  tallyQuestionResults={ this.tallyQuestionResults }
+                  hogwartsHouses={ this.state.hogwartsHouses }
+                  questionNumber={ this.state.questionResults.length + 1}
+                  determineUserHouse={ this.determineUserHouse }
+                />
               )
             }}
           />
@@ -50,7 +110,10 @@ class App extends Component {
             path="/result"
             render={() => {
               return (
-                <Result />
+                <Result 
+                  resetQuiz={this.resetQuiz}
+                  userHouse={this.state.userHouse}
+                />
               )
             }}
           />

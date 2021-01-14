@@ -71,6 +71,11 @@
     width: 40%;
 }
 
+.restart-txt {
+    margin-bottom: 0;
+}
+
 .restart-btn-anchor {
-    @include btn-anchor
+    @include btn-anchor;
+    margin-top: 0;
 }

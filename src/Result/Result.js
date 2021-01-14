@@ -61,7 +61,7 @@ class Result extends Component {
                     <ul>
                         {this.state.houseMates}
                     </ul>
-                    <p>Not happy with the result?</p>
+                    <p className="restart-txt">Not happy with the result?</p>
                     <Link
                         to="/question"
                         className="restart-btn-anchor"

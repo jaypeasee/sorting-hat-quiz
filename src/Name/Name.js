@@ -30,15 +30,29 @@ class Name extends Component {
                     placeholder="Your Name"
                     onChange={ this.updateNameInput }
                     value={ this.state.nameInput }
+                    className="name-input"
                 />
+                {this.state.nameInput &&
                 <Link
                     to="/question"
+                    className="name-btn-anchor"
                 >
                     <button
+                        className="name-btn"
                         onClick={ () => setUserName(this.state.nameInput) }
                     >
                     Enroll!</button>
-                </Link>
+                </Link>}
+                {!this.state.nameInput &&
+                <Link
+                    className="name-btn-anchor"
+                >
+                    <button
+                        className="disabled-name-btn"
+                        onClick={ () => setUserName(this.state.nameInput) }
+                    >
+                    Enroll!</button>
+                </Link>}
             </form>
         )
     }

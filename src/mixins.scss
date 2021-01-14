@@ -16,3 +16,18 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+@mixin button {
+    background-color: $primary-gold;
+    border: 2px solid $primary-maroon;
+    border-radius: 20px;
+    font-family: $primary-font;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 5px 5px 5px black;
+    font-size: 1.25em;
+    &:hover {
+        transform: scale(1.05);
+        transition-duration: 0.4s;
+    }
+}

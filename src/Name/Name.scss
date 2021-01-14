@@ -2,4 +2,32 @@
 
 .name-form {
     @include column-center;
+    width: 50%;
+    margin: 5%;
+}
+
+.name-input {
+    width: 300px;
+    padding: 3%;
+    margin: 2.5%;
+    outline: none;
+    box-shadow: inset 0 0 11px black;
+}
+
+.name-btn-anchor {
+    width: 340px;
+    margin: 2.5%;
+}
+
+.name-btn {
+    @include button;
+    width: 100%;
+    padding: 2%;
+}
+
+.disabled-name-btn {
+    @include button;
+    width: 100%;
+    padding: 2%;
+    opacity: .5;
 }

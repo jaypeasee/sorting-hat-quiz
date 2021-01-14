@@ -40,11 +40,7 @@ class App extends Component {
 
   determineUserHouse = () => {
     const houseCount = this.state.questionResults.reduce((houseDetails, house) => {
-      if (!houseDetails[house]) {
-        houseDetails[house] = 1
-      } else {
-        houseDetails[house] += 1
-      }
+      !houseDetails[house] ? houseDetails[house] = 1 : houseDetails[house] += 1
       return houseDetails
     }, {})
 
@@ -86,7 +82,7 @@ class App extends Component {
             render={() => {
               return (
                 <Name 
-                  setUserName={this.setUserName}
+                  setUserName={ this.setUserName }
                 />
               )
             }}
@@ -99,7 +95,7 @@ class App extends Component {
                 <Question 
                   tallyQuestionResults={ this.tallyQuestionResults }
                   hogwartsHouses={ this.state.hogwartsHouses }
-                  questionNumber={ this.state.questionResults.length + 1}
+                  questionNumber={ this.state.questionResults.length + 1 }
                   determineUserHouse={ this.determineUserHouse }
                 />
               )
@@ -111,8 +107,9 @@ class App extends Component {
             render={() => {
               return (
                 <Result 
-                  resetQuiz={this.resetQuiz}
-                  userHouse={this.state.userHouse}
+                  resetQuiz={ this.resetQuiz }
+                  userHouse={ this.state.userHouse }
+                  userName={ this.state.userName }
                 />
               )
             }}

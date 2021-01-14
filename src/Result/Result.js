@@ -8,7 +8,9 @@ class Result extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            houseMates: []
+            houseMates: [],
+            primaryColor: "",
+            secondaryColor: ""
         }
     }
 
@@ -49,7 +51,6 @@ class Result extends Component {
                         onClick={this.props.resetQuiz}
                     >Retake The Quiz</button>
                 </Link>
-                
             </section>
         )
     }

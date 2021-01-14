@@ -9,8 +9,6 @@ class Result extends Component {
         super(props)
         this.state = {
             houseMates: [],
-            primaryColor: "",
-            secondaryColor: ""
         }
     }
 
@@ -39,9 +37,11 @@ class Result extends Component {
             name, founder, mascot, headOfHouse, houseGhost,
             value1, value2, value3, value4, color1, color2, 
         } = this.props.userHouse
-        
+        const { primaryColor, secondaryColor } = this.state
         return (
-            <section className="result-page">
+            <section 
+                className={name.toLowerCase()}
+            >
                 <section className="result-announcement">
                     <div className="announcement-txt">
                         <h1>{`${name.toUpperCase()}!`}</h1>

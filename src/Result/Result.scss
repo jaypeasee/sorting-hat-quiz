@@ -1,8 +1,60 @@
 @import '../mixins.scss';
+@import '../variables.scss';
 
-.result-page {
+.gryffindor {
     @include column-center;
-    margin: 5%;
+    @include result-section;
+    color: $gold;
+    background-color: $red;
+}
+
+.gryffindor .restart-btn {
+    @include btn;
+    background-color: $gold;
+    color: $red;
+    border-color: $black;
+}
+
+.hufflepuff {
+    @include column-center;
+    @include result-section;
+    color: $yellow;
+    background-color: $black;
+}
+
+.hufflepuff .restart-btn {
+    @include btn;
+    color: $black;
+    background-color: $yellow;
+    border-color: $black;
+}
+
+.ravenclaw {
+    @include column-center;
+    @include result-section;
+    color: $bronze;
+    background-color: $blue;
+}
+
+.ravenclaw .restart-btn {
+    @include btn;
+    color: $blue;
+    background-color: $bronze;
+    border-color: $black;
+}
+
+.slytherin {
+    @include column-center;
+    @include result-section;
+    color: $silver;
+    background-color: $green;
+}
+
+.slytherin .restart-btn {
+    @include btn;
+    color: $green;
+    background-color: $silver;
+    border-color: $black;
 }
 
 .result-announcement {

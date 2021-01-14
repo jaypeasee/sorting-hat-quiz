@@ -58,7 +58,6 @@ class App extends Component {
   resetQuiz = () => {
     this.setState({
       userHouse: {},
-      userName: "",
       questionResults: [],
     })
   }

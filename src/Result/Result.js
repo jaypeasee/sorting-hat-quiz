@@ -60,7 +60,7 @@ class Result extends Component {
                     </ul>
                     <p>Not happy with the result?</p>
                     <Link
-                        to="/"
+                        to="/question"
                         className="restart-btn-anchor"
                     >
                     <button

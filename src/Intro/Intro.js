@@ -50,7 +50,7 @@ const Intro = () => {
                 />
             </section>
             <Link to="/your-name">
-                <button>Get Sorted</button>
+                <button className="get-sorted-btn">Get Sorted</button>
             </Link>
         </section>
     )

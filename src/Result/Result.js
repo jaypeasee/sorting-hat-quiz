@@ -30,7 +30,11 @@ class Result extends Component {
             return char.house === this.props.userHouse.name
         })
         return houseMateDetails.map(char => {
-            return <li key={char._id}>{char.name}</li>
+            return 
+            <li 
+                key={char._id}
+                data-testid="housemates"
+            >{char.name}</li>
         })
     }
 
@@ -48,7 +52,7 @@ class Result extends Component {
                 <section className="result-announcement">
                     <div className="announcement-txt">
                         <h1>{`${name.toUpperCase()}!`}</h1>
-                        <p>
+                        <p data-testid="house-description">
                             {`Welcome to ${name}, ${userName}!
                             Founded by the ${mascot}, ${founder}, and led by Professor ${headOfHouse},
                             ${name}s are known for their ${value1.toLowerCase()}, ${value2.toLowerCase()}, 

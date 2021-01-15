@@ -25,7 +25,32 @@ describe("Result", () => {
         )
     })
 
-    it('should have a house declaration title', () => {
-        const title = (screen.getByText("RAVENCLAW!"))
+    it('should have a house declaration title', async () => {
+        expect(screen.getByText("RAVENCLAW!")).toBeInTheDocument()
+    })
+
+    it('should have a house description', () => {
+        expect(screen.getByTestId('house-description'))
+    })
+
+    it('should have a fellow house members declaration', () => {
+        expect(screen.getByText("Your fellow Ravenclaws")).toBeInTheDocument()
+    })
+
+    it('should render an opportunity to retake the test', () => {
+        expect(screen.getByText("Not happy with the result?")).toBeInTheDocument()
+        expect(screen.getByText("Get Sorted Again")).toBeInTheDocument()
+        screen.debug()
+    })
+
+    it('should call resetQuiz when the restart button is clicked', () => {
+        const restartBtn = screen.getByText("Get Sorted Again")
+        userEvent.click(restartBtn)
+    })
+
+    it('should change the url path to question when the restart button is clicked', () => {
+        const restartBtn = screen.getByText("Get Sorted Again")
+        userEvent.click(restartBtn)
+        expect(history.location.pathname).toBe("/question")
     })
 })

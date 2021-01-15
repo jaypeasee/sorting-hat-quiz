@@ -1,5 +1,5 @@
 import Question from './Question'
-import { screen, render } from '@testing-library/react'
+import { screen, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { Router } from 'react-router-dom'
@@ -39,7 +39,7 @@ describe('Question', () => {
             value4: "Plain"
         }
     ]
-    let ravenclawBtn1
+    let answerBtns
 
     beforeEach(() => {
         render(
@@ -52,10 +52,25 @@ describe('Question', () => {
                 />
             </Router>
         )
-        ravenclawBtn1 = screen.getByText('Nerdy')
+        answerBtns = screen.getAllByRole('button')
     })
 
     it('should have a question', () => {
         expect(screen.getByText("1. What do you value most?")).toBeInTheDocument()
+    })
+
+    it('should have four answers per question', () => {
+        expect(answerBtns[0]).toBeInTheDocument()
+        expect(answerBtns.length).toBe(4)
+    })
+
+    it('should call tallyQuestionResults() on answer button click', () => {
+        userEvent.click(answerBtns[1])
+        expect(tallyQuestionResults).toHaveBeenCalledWith("Hufflepuff")
+    })
+
+    it('should call determineUserHouse() on answer button click', async () => {
+        userEvent.click(answerBtns[2])
+        expect(await waitFor(() => determineUserHouse)).toHaveBeenCalledTimes(1)
     })
 })

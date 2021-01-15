@@ -9,11 +9,12 @@ import { createMemoryHistory } from 'history'
 jest.mock('../utilities')
 
 describe("Result", () => {
-    const history = createMemoryHistory()
     const resetQuiz = jest.fn()
+    const history = createMemoryHistory()
+    let restartBtn
 
-    beforeEach(() => {
-        getAllCharacters.mockResolvedValueOnce(mockCharacterData)
+    beforeEach( async () => {
+        getAllCharacters.mockResolvedValue(mockCharacterData)
         render (
             <Router history={ history }>
                 <Result
@@ -23,9 +24,10 @@ describe("Result", () => {
                 />
             </Router>
         )
+        await waitFor(() => restartBtn = screen.getByText("Get Sorted Again"))
     })
 
-    it('should have a house declaration title', async () => {
+    it('should have a house declaration title', () => {
         expect(screen.getByText("RAVENCLAW!")).toBeInTheDocument()
     })
 
@@ -33,23 +35,23 @@ describe("Result", () => {
         expect(screen.getByTestId('house-description'))
     })
 
-    it('should have a fellow house members declaration', () => {
+    it('should have a fellow house members declaration',  () => {
         expect(screen.getByText("Your fellow Ravenclaws")).toBeInTheDocument()
+        const housemates = screen.getAllByTestId('housemates')
+        expect(housemates.length).toBe(2)
     })
 
     it('should render an opportunity to retake the test', () => {
         expect(screen.getByText("Not happy with the result?")).toBeInTheDocument()
-        expect(screen.getByText("Get Sorted Again")).toBeInTheDocument()
-        screen.debug()
+        expect(restartBtn).toBeInTheDocument()
     })
 
     it('should call resetQuiz when the restart button is clicked', () => {
-        const restartBtn = screen.getByText("Get Sorted Again")
         userEvent.click(restartBtn)
+        expect(resetQuiz).toHaveBeenCalledTimes(1)
     })
 
     it('should change the url path to question when the restart button is clicked', () => {
-        const restartBtn = screen.getByText("Get Sorted Again")
         userEvent.click(restartBtn)
         expect(history.location.pathname).toBe("/question")
     })

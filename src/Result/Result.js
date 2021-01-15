@@ -30,11 +30,12 @@ class Result extends Component {
             return char.house === this.props.userHouse.name
         })
         return houseMateDetails.map(char => {
-            return 
-            <li 
-                key={char._id}
-                data-testid="housemates"
-            >{char.name}</li>
+            return (
+                <li 
+                    key={char._id}
+                    data-testid="housemates"
+                >{char.name}</li>
+            )
         })
     }
 

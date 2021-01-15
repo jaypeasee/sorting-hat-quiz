@@ -13,8 +13,8 @@ describe('Name', () => {
 
     beforeEach(() => {
         render(
-            <Router history={history}>
-                <Name setUserName={setUserName}/>
+            <Router history={ history }>
+                <Name setUserName={ setUserName }/>
             </Router>
         )
         nameInput = screen.getByPlaceholderText("Your Name")

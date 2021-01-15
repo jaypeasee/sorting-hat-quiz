@@ -11,7 +11,7 @@ describe ('Intro', () => {
 
     beforeEach(() => {
         render(
-            <Router history={history}>
+            <Router history={ history }>
                 <Intro />
             </Router>
         )

@@ -30,7 +30,7 @@ class Result extends Component {
             return char.house === this.props.userHouse.name
         })
         return houseMateDetails.map(char => {
-            return <li>{char.name}</li>
+            return <li key={char._id}>{char.name}</li>
         })
     }
 

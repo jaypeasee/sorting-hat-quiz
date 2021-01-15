@@ -47,21 +47,26 @@ export const mockCharacterData = [
     {
         name: "Arthur Weasley",
         house: "Gryffindor",
+        _id: 41
     },
     {
         name: "Victoire Weasley",
-        house: "Ravenclaw"
+        house: "Ravenclaw",
+        _id: 3
     },
     {
         name: "Albus Potter",
         house: "Slytherin",
+        _id: 5
     },
     {
         name: "Teddy Lupin",
-        house: "Hufflepuff"
+        house: "Hufflepuff",
+        _id: 28
     },
     {
         name: "Garrick Ollivander",
-        house: "Ravenclaw"
+        house: "Ravenclaw",
+        _id: 61
     }
 ]

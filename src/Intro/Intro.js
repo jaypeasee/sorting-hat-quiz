@@ -8,7 +8,7 @@ const Intro = () => {
             <section className="intro-content">
                 <div className="sorting-song">
                     <h1>The Hogwarts Sorting Hat's Song</h1>
-                    <p>
+                    <p data-testid="sorting-hats-song">
                         Oh, you may not think I'm pretty,
                         But don't judge on what you see,
                         I'll eat myself if you can find

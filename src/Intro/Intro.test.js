@@ -22,5 +22,16 @@ describe ('Intro', () => {
         expect(screen.getByText("The Hogwarts Sorting Hat's Song")).toBeInTheDocument()
     })
 
+    it('should have a song', () => {
+        expect(screen.getByTestId('sorting-hats-song')).toBeInTheDocument()
+    })
 
+    it('should have a Get Sorted button', () => {
+        expect(startBtn).toBeInTheDocument()
+    })
+
+    it('should change the url path when the Start Button is clicked', () => {
+        userEvent.click(startBtn)
+        expect(history.location.pathname).toBe("/your-name")
+    })
 })

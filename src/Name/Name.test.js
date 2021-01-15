@@ -29,7 +29,41 @@ describe('Name', () => {
         expect(nameInput).toBeInTheDocument()
     })
 
-    it('should have a disabled button to start', () => {
+    it('should have a disabled button if the name input is empty', () => {
         expect(disabledBtn).toBeInTheDocument()
+        userEvent.type(nameInput, "Remus Lupin")
+        expect(disabledBtn).not.toBeInTheDocument()
+    })
+
+    it('should render an error message if the disabled button is clicked', () => {
+        userEvent.click(disabledBtn)
+        expect(screen.getByText("Please enter your name before continuing")).toBeInTheDocument()
+    })
+
+    it('should render an enabled button only if the name input has text in it', () => {
+        userEvent.type(nameInput, "Neville Longbottom")
+        const enabledBtn = screen.getByTestId("enabled-name-btn")
+        expect(enabledBtn).toBeInTheDocument()
+        userEvent.clear(nameInput)
+        expect(enabledBtn).not.toBeInTheDocument()
+    })
+
+    it('should call the setUserName() method on the enabled button', () => {
+        userEvent.type(nameInput, "Ginny Weasley")
+        const enabledBtn = screen.getByTestId("enabled-name-btn")
+        userEvent.click(enabledBtn)
+        expect(setUserName).toHaveBeenCalledWith("Ginny Weasley")
+    })
+
+    it('should not call the setUserName() method on the disbaled button', () => {
+        userEvent.click(disabledBtn)
+        expect(setUserName).not.toHaveBeenCalled()
+    })
+
+    it('should change the url path if the enabled button is clicked', () => {
+        userEvent.type(nameInput, "Ron Weasley")
+        const enabledBtn = screen.getByTestId("enabled-name-btn")
+        userEvent.click(enabledBtn)
+        expect(history.location.pathname).toBe('/question')
     })
 })

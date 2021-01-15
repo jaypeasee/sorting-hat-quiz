@@ -49,7 +49,10 @@ class Name extends Component {
                     className="name-input"
                 />
                 {this.state.nameInput &&
-                <button className="name-btn">
+                <button 
+                    className="name-btn"
+                    data-testid="enabled-name-btn"
+                >
                 Enroll!</button>
                 }
                 {!this.state.nameInput &&

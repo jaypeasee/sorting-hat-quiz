@@ -53,7 +53,10 @@ class Name extends Component {
                 Enroll!</button>
                 }
                 {!this.state.nameInput &&
-                <button className="disabled-name-btn">
+                <button 
+                    className="disabled-name-btn"
+                    data-testid="disabled-name-btn"
+                >
                 Enroll!</button>}
                 {this.state.formInvalid && 
                 <p>Please enter your name before continuing</p>}

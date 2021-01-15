@@ -21,4 +21,13 @@ describe('Error', () => {
     it('should have an error message', () => {
         expect(screen.getByText('Sorry, Something went wrong.')).toBeInTheDocument()
     })
+
+    it('should have a return to home button', () => {
+        expect(homeBtn).toBeInTheDocument()
+    })
+
+    it('should change the url path when the return to home button is clicked', () => {
+        userEvent.click(homeBtn)
+        expect(history.location.pathname).toBe('/')
+    })
 })

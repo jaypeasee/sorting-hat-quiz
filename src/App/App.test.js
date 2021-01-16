@@ -10,23 +10,21 @@ jest.mock('../utilities.js')
 
 
 describe("App", () => {
-  let history
   let startBtn
 
   beforeEach(() => {
-    history = createMemoryHistory()
     getHogwartsHouses.mockResolvedValue(mockHouseData)
     getAllCharacters.mockResolvedValue(mockCharacterData)
 
     render (
-      <BrowserRouter history={ history }>
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     )
     startBtn = screen.getByText("Get Sorted")
   })
 
-  it('should take the full quiz and get a result', async () => {
+  it('should take the full quiz, get a result, and retake it', async () => {
     await waitFor(() => userEvent.click(startBtn))
     const nameInput = screen.getByPlaceholderText("Your Name")
     userEvent.type(nameInput, "Arthur Weasley")

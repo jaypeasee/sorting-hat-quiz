@@ -4,29 +4,27 @@ import { mockCharacterData, mockHouseData } from '../mockData'
 import { screen, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
-import { BrowserRouter, MemoryRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 jest.mock('../utilities.js')
 
 
 describe("App", () => {
-  let history
   let startBtn
 
   beforeEach(() => {
-    history = createMemoryHistory()
     getHogwartsHouses.mockResolvedValue(mockHouseData)
     getAllCharacters.mockResolvedValue(mockCharacterData)
 
     render (
-      <BrowserRouter history={ history }>
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     )
     startBtn = screen.getByText("Get Sorted")
   })
 
-  it('should take the full quiz and get a result', async () => {
+  it('should take the full quiz, get a result, and retake it', async () => {
     await waitFor(() => userEvent.click(startBtn))
     const nameInput = screen.getByPlaceholderText("Your Name")
     userEvent.type(nameInput, "Arthur Weasley")
@@ -44,8 +42,12 @@ describe("App", () => {
 
     const resultTitle = await waitFor(() => screen.getByText("RAVENCLAW!"))
     expect(resultTitle).toBeInTheDocument()
-  })
 
-  //should take the full quiz with a different result
-  //should be able to restart the quiz
+    const restartBtn = screen.getByText("Get Sorted Again")
+    userEvent.click(restartBtn)
+
+    expect(screen.getByText("1. What do you value most?")).toBeInTheDocument()
+    const answerBtns = screen.getAllByRole('button')
+    expect(answerBtns.length).toBe(4)
+  })
 })

@@ -1,6 +1,6 @@
 import Result from './Result'
 import { getAllCharacters } from '../utilities'
-import { mockRavenclawData, mockCharacterData } from '../mockData'
+import { mockHouseData, mockCharacterData } from '../mockData'
 import { screen, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
@@ -19,7 +19,7 @@ describe("Result", () => {
             <Router history={ history }>
                 <Result
                     resetQuiz={ resetQuiz }
-                    userHouse={ mockRavenclawData }
+                    userHouse={ mockHouseData[3] }
                     userName={ "Fred Weasley" }
                 />
             </Router>

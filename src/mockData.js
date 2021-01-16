@@ -1,17 +1,3 @@
-export const mockRavenclawData = {
-    color1: "Purple",
-    color2: "Black",
-    founder: "Albus Dumbledore",
-    headOfHouse: "Remus Lupin",
-    houseGhost: "Peeves",
-    mascot: "Phoenix",
-    name: "Ravenclaw",
-    value1: "Nerdy",
-    value2: "Teachers pet",
-    value3: "Unimaginative",
-    value4: "Plain",
-}
-
 export const mockCharacterData = [
     {
         name: "Arthur Weasley",

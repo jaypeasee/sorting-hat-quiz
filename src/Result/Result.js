@@ -1,7 +1,7 @@
 import './Result.scss'
 import Error from '../Error/Error'
 import mcgonagallImg from './mcgonagall.png'
-import { getAllCharacters } from '../utilities'
+import { getAllCharacters } from '../apiCalls'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 

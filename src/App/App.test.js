@@ -1,12 +1,12 @@
 import App from './App';
-import { getAllCharacters, getHogwartsHouses } from '../utilities.js'
+import { getAllCharacters, getHogwartsHouses } from '../apiCalls.js'
 import { mockCharacterData, mockHouseData } from '../mockData'
 import { screen, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { BrowserRouter } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-jest.mock('../utilities.js')
+jest.mock('../apiCalls.js')
 
 
 describe("App", () => {

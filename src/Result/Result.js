@@ -18,7 +18,7 @@ class Result extends Component {
     componentDidMount() {
         getAllCharacters()
             .then(data => this.setState({
-                houseMates: cleanCharacterData(data, this.props.userHouse),
+                houseMates: this.listHousemates(data),
                 resultError: false
             }))
             .catch(this.setState({
@@ -26,8 +26,9 @@ class Result extends Component {
             }))
     }
 
-    listHousemates = () => {
-        return this.state.houseMates.map(char => {
+    listHousemates = (data) => {
+        const cleanedCharacterData = cleanCharacterData(data, this.props.userHouse)
+        return cleanedCharacterData.map(char => {
             return (
                 <li 
                     key={char._id}
@@ -62,7 +63,7 @@ class Result extends Component {
                         </p>
                         <h2>{`Your fellow ${name}s`}</h2>
                     <ul>
-                        {this.listHousemates}
+                        {this.state.houseMates}
                     </ul>
                     <p className="restart-txt">Not happy with the result?</p>
                     <Link

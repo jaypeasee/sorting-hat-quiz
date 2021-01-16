@@ -84,7 +84,7 @@ class App extends Component {
           <Route 
             exact
             path="/your-name"
-            component={() => {
+            render={() => {
               return (
                 <Name 
                   setUserName={ this.setUserName }
@@ -95,7 +95,7 @@ class App extends Component {
           <Route 
             exact
             path="/question"
-            component={() => {
+            render={() => {
               return (
                 <Question 
                   tallyQuestionResults={ this.tallyQuestionResults }

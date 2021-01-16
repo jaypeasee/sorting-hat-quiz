@@ -28,6 +28,7 @@ export const mockCharacterData = [
 
 export const mockHouseData = [
     {
+        _id: 1,
         color1: "Black",
         color2: "Green",
         founder: "Alastor Moody",
@@ -41,6 +42,7 @@ export const mockHouseData = [
         value4: "Self-righteous",
     },
     {
+        _id: 2,
         color1: "Gray",
         color2: "Blue",
         founder: "New Scamander",
@@ -54,6 +56,7 @@ export const mockHouseData = [
         value4: "Dim"
     },
     {
+        _id: 3,
         color1: "Gold",
         color2: "Blue",
         founder: "Vodemort",
@@ -67,6 +70,7 @@ export const mockHouseData = [
         value4: "Cheater",
     },
     {
+        _id: 4,
         color1: "Maroon",
         color2: "Yellow",
         founder: "Gellert Grindelwald,",
@@ -80,3 +84,4 @@ export const mockHouseData = [
         value4: "Plain",
     }
 ]
+

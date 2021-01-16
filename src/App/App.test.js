@@ -1,35 +1,36 @@
 import App from './App';
-import { render, screen } from '@testing-library/react';
-import { getAllCharacters, getHogwartsHouses } from '../utilities'
+import { getAllCharacters, getHogwartsHouses } from '../utilities.js'
 import { mockCharacterData, mockHouseData } from '../mockData'
 import { screen, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
-import { Router } from 'react-router-dom'
+import { BrowserRouter, MemoryRouter } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-jest.mock('../utilities')
+jest.mock('../utilities.js')
 
 
 describe("App", () => {
-  const history = createMemoryHistory()
+  let history
+  let startBtn
 
   beforeEach(() => {
+    history = createMemoryHistory()
     getHogwartsHouses.mockResolvedValue(mockHouseData)
     getAllCharacters.mockResolvedValue(mockCharacterData)
+
     render (
-      <Router history={ history }>
-        <App></App>
-      </Router>
+      <BrowserRouter history={ history }>
+        <App />
+      </BrowserRouter>
     )
+    startBtn = screen.getByText("Get Sorted")
   })
 
   it('should take the full quiz and get a result', async () => {
-    const startBtn = screen.getByText("Get Sorted")
-    userEvent.click(startBtn)
-
-    const nameInput = screen.getByPlaceholderText("Your Name")
-    const nameSubmit = screen.getByText("Enroll!")
+    await waitFor(() => userEvent.click(startBtn))
+    const nameInput = await waitFor(() => screen.getByPlaceholderText("Your Name"))
     userEvent.type(nameInput, "Arthur Weasley")
+    const nameSubmit = screen.getByText("Enroll!")
     userEvent.click(nameSubmit)
 
     const ravenclawAnswer1 = await waitFor(() => screen.getByText("Nerdy"))
@@ -45,7 +46,6 @@ describe("App", () => {
     expect(resultTitle).toBeInTheDocument()
   })
 
-  //should take the full quiz with a result
   //should take the full quiz with a different result
   //should be able to restart the quiz
 })

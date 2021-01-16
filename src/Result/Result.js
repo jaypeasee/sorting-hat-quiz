@@ -2,6 +2,7 @@ import './Result.scss'
 import Error from '../Error/Error'
 import mcgonagallImg from './mcgonagall.png'
 import { getAllCharacters } from '../apiCalls'
+import { cleanCharacterData } from '../utilities'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -17,26 +18,12 @@ class Result extends Component {
     componentDidMount() {
         getAllCharacters()
             .then(data => this.setState({
-                houseMates: this.filterHouseMateNames(data),
+                houseMates: cleanCharacterData(data),
                 resultError: false
             }))
             .catch(this.setState({
                 resultError: true
             }))
-    }
-
-    filterHouseMateNames = (characters) => {
-        const houseMateDetails = characters.filter(char => {
-            return char.house === this.props.userHouse.name
-        })
-        return houseMateDetails.map(char => {
-            return (
-                <li 
-                    key={char._id}
-                    data-testid="housemates"
-                >{char.name}</li>
-            )
-        })
     }
 
     render() {
@@ -64,7 +51,7 @@ class Result extends Component {
                         </p>
                         <h2>{`Your fellow ${name}s`}</h2>
                     <ul>
-                        {this.state.houseMates}
+                        {this.listHousemates}
                     </ul>
                     <p className="restart-txt">Not happy with the result?</p>
                     <Link

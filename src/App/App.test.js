@@ -15,6 +15,7 @@ describe("App", () => {
 
   beforeEach(() => {
     getHogwartsHouses.mockResolvedValue()
+    
     render (
       <Router history={ history }>
         <App></App>

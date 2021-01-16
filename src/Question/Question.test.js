@@ -1,5 +1,5 @@
 import Question from './Question'
-import { mockAnswerData } from '../mockData'
+import { mockHouseData } from '../mockData'
 import { screen, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
@@ -20,7 +20,7 @@ describe('Question 1', () => {
                     tallyQuestionResults={ tallyQuestionResults }
                     determineUserHouse={ determineUserHouse }
                     questionNumber={1}
-                    hogwartsHouses={ mockAnswerData }
+                    hogwartsHouses={ mockHouseData }
                 />
             </Router>
         )
@@ -64,7 +64,7 @@ describe("Question 4", () => {
                     tallyQuestionResults={ tallyQuestionResults }
                     determineUserHouse={ determineUserHouse }
                     questionNumber={4}
-                    hogwartsHouses={ mockAnswerData }
+                    hogwartsHouses={ mockHouseData }
                 />
             </Router>
         )

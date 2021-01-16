@@ -28,7 +28,7 @@ describe("App", () => {
 
   it('should take the full quiz and get a result', async () => {
     await waitFor(() => userEvent.click(startBtn))
-    const nameInput = await waitFor(() => screen.getByPlaceholderText("Your Name"))
+    const nameInput = screen.getByPlaceholderText("Your Name")
     userEvent.type(nameInput, "Arthur Weasley")
     const nameSubmit = screen.getByText("Enroll!")
     userEvent.click(nameSubmit)

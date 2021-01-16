@@ -18,12 +18,23 @@ class Result extends Component {
     componentDidMount() {
         getAllCharacters()
             .then(data => this.setState({
-                houseMates: cleanCharacterData(data),
+                houseMates: cleanCharacterData(data, this.props.userHouse),
                 resultError: false
             }))
             .catch(this.setState({
                 resultError: true
             }))
+    }
+
+    listHousemates = () => {
+        return this.state.houseMates.map(char => {
+            return (
+                <li 
+                    key={char._id}
+                    data-testid="housemates"
+                >{char.name}</li>
+            )
+        })
     }
 
     render() {

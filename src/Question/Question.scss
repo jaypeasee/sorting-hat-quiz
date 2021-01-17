@@ -20,3 +20,17 @@
 .question-btn {
     @include btn;
 }
+
+@media only screen and (max-width: 375px) {
+    .question-slide {
+        width: 85%;
+    }
+
+    .question-slide h1 {
+        text-align: center;
+    }
+
+    .question-btn-anchor {
+        width: 80%;
+    }
+}

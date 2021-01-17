@@ -1,11 +1,11 @@
 import './Error.scss'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
-const Error = (props) => {
+const Error = ({errorMessage}) => {
     return (
         <section className="error-section">
-            {!props.errorMessage && <h1>Oops! This page does not exist.</h1>}
-            {props.errorMessage && <h1>{props.errorMessage}</h1>}
+            <h1>{errorMessage}</h1>
             <Link
                 to="/"
                 className="error-btn-anchor"

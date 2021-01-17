@@ -30,3 +30,16 @@
         transform: none;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    .name-form {
+        width: 90%;
+    }
+    .disabled-name-btn, .name-btn {
+        width: 80%;
+    }
+
+    .name-input {
+        width: 75%;
+    }
+}

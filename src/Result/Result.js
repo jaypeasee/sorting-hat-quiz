@@ -5,6 +5,8 @@ import { getAllCharacters } from '../apiCalls'
 import { cleanCharacterData } from '../utilities'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 
 class Result extends Component {
     constructor(props) {
@@ -92,3 +94,9 @@ class Result extends Component {
 }
 
 export default Result
+
+Result.prototypes = {
+    resetQuiz: PropTypes.func.isRequired,
+    userHouse: PropTypes.object.isRequired,
+    userName: PropTypes.string.isRequired
+}

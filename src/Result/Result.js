@@ -65,7 +65,9 @@ class Result extends Component {
                         </p>
                         <h2>{`Your fellow ${name}s`}</h2>
                     <ul>
-                        {this.state.houseMates}
+                        {this.state.houseMates.length < 1 &&
+                        <p>Finding your housemates...</p>}
+                        { this.state.houseMates }
                     </ul>
                     <p className="restart-txt">Not happy with the result?</p>
                     <Link
@@ -95,7 +97,7 @@ class Result extends Component {
 
 export default Result
 
-Result.prototypes = {
+Result.protoTypes = {
     resetQuiz: PropTypes.func.isRequired,
     userHouse: PropTypes.object.isRequired,
     userName: PropTypes.string.isRequired

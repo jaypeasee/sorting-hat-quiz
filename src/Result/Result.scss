@@ -2,10 +2,9 @@
 @import '../variables.scss';
 
 .gryffindor {
-    @include column-center;
+    @include result-page;
     color: $gold;
     background-color: $red;
-    height: 100vh;
 }
 
 .gryffindor .restart-btn {
@@ -16,8 +15,7 @@
 }
 
 .hufflepuff {
-    @include column-center;
-    height: 100vh;
+    @include result-page;
     color: $yellow;
     background-color: $black;
 }
@@ -30,10 +28,9 @@
 }
 
 .ravenclaw {
-    @include column-center;
+    @include result-page;
     color: $bronze;
     background-color: $blue;
-    height: 100vh;
 }
 
 .ravenclaw .restart-btn {
@@ -44,10 +41,9 @@
 }
 
 .slytherin {
-    @include column-center;
+    @include result-page;
     color: $silver;
     background-color: $green;
-    height: 100vh;
 }
 
 .slytherin .restart-btn {

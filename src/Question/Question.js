@@ -1,4 +1,5 @@
 import './Question.scss'
+import Error from '../Error/Error'
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
@@ -36,46 +37,50 @@ class Question extends Component {
         const { questionNumber } = this.props
         return (
             <section className="question-slide">
-                <h1>{`${questionNumber}. What do you value most`}?</h1>
-                <section className="question-options">
-                    <Link
-                        to={questionNumber < 4 ? '/question' : '/result'}
-                        className="question-btn-anchor"
-                    >
-                        <button
-                            onClick={ () => this.handleAnswerSubmit("Gryffindor") }
-                            className="question-btn"
-                        >{answerValues[0]}</button>
-                    </Link>
-                    <Link
-                        to={questionNumber < 4 ? '/question' : '/result'}
-                        className="question-btn-anchor"
-                    >
-                        <button
-                            onClick={ () => this.handleAnswerSubmit("Hufflepuff") }
-                            className="question-btn"
-                        >{answerValues[1]}</button>
-                    </Link>
-                    <Link
-                        to={questionNumber < 4 ? '/question' : '/result'}
-                        className="question-btn-anchor"
-                    >
-                        <button
-                            onClick={ () => this.handleAnswerSubmit("Slytherin") }
-                            className="question-btn"
-                        >{answerValues[2]}</button>
-                    </Link>
-                    <Link
-                        to={questionNumber < 4 ? '/question' : '/result'}
-                        className="question-btn-anchor"
-                    >
-                        <button
-                            onClick={ () => this.handleAnswerSubmit("Ravenclaw") }
-                            className="question-btn"
-                        >{answerValues[3]}
-                        </button>
-                    </Link>
-                </section>
+                { answerValues.length > 0 &&
+                <section>
+                    <h1>{`${questionNumber}. What do you value most`}?</h1>
+                    <section className="question-options">
+                        <Link
+                            to={questionNumber < 4 ? '/question' : '/result'}
+                            className="question-btn-anchor"
+                        >
+                            <button
+                                onClick={ () => this.handleAnswerSubmit("Gryffindor") }
+                                className="question-btn"
+                            >{answerValues[0]}</button>
+                        </Link>
+                        <Link
+                            to={questionNumber < 4 ? '/question' : '/result'}
+                            className="question-btn-anchor"
+                        >
+                            <button
+                                onClick={ () => this.handleAnswerSubmit("Hufflepuff") }
+                                className="question-btn"
+                            >{answerValues[1]}</button>
+                        </Link>
+                        <Link
+                            to={questionNumber < 4 ? '/question' : '/result'}
+                            className="question-btn-anchor"
+                        >
+                            <button
+                                onClick={ () => this.handleAnswerSubmit("Slytherin") }
+                                className="question-btn"
+                            >{answerValues[2]}</button>
+                        </Link>
+                        <Link
+                            to={questionNumber < 4 ? '/question' : '/result'}
+                            className="question-btn-anchor"
+                        >
+                            <button
+                                onClick={ () => this.handleAnswerSubmit("Ravenclaw") }
+                                className="question-btn"
+                            >{answerValues[3]}
+                            </button>
+                        </Link>
+                    </section>
+                </section>}
+                {!answerValues.length && <Error errorMessage="Sorry, something went wrong."/>}
             </section>
         )
     }

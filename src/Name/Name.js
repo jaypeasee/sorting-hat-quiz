@@ -1,6 +1,7 @@
 import './Name.scss'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 class Name extends Component {
     constructor(props) {
@@ -68,3 +69,10 @@ class Name extends Component {
 }
 
 export default withRouter(Name)
+
+Name.propTypes = {
+    setUserName: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired
+}

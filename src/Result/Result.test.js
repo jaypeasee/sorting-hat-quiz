@@ -1,12 +1,12 @@
 import Result from './Result'
-import { getAllCharacters } from '../utilities'
+import { getAllCharacters } from '../apiCalls'
 import { mockHouseData, mockCharacterData } from '../mockData'
 import { screen, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-jest.mock('../utilities')
+jest.mock('../apiCalls')
 
 describe("Result", () => {
     const resetQuiz = jest.fn()

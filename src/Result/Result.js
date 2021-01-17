@@ -1,9 +1,12 @@
 import './Result.scss'
 import Error from '../Error/Error'
 import mcgonagallImg from './mcgonagall.png'
-import { getAllCharacters } from '../utilities'
+import { getAllCharacters } from '../apiCalls'
+import { cleanCharacterData } from '../utilities'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 
 class Result extends Component {
     constructor(props) {
@@ -17,7 +20,7 @@ class Result extends Component {
     componentDidMount() {
         getAllCharacters()
             .then(data => this.setState({
-                houseMates: this.filterHouseMateNames(data),
+                houseMates: this.listHousemates(data),
                 resultError: false
             }))
             .catch(this.setState({
@@ -25,11 +28,9 @@ class Result extends Component {
             }))
     }
 
-    filterHouseMateNames = (characters) => {
-        const houseMateDetails = characters.filter(char => {
-            return char.house === this.props.userHouse.name
-        })
-        return houseMateDetails.map(char => {
+    listHousemates = (data) => {
+        const cleanedCharacterData = cleanCharacterData(data, this.props.userHouse)
+        return cleanedCharacterData.map(char => {
             return (
                 <li 
                     key={char._id}
@@ -64,7 +65,9 @@ class Result extends Component {
                         </p>
                         <h2>{`Your fellow ${name}s`}</h2>
                     <ul>
-                        {this.state.houseMates}
+                        {this.state.houseMates.length < 1 &&
+                        <p>Finding your housemates...</p>}
+                        { this.state.houseMates }
                     </ul>
                     <p className="restart-txt">Not happy with the result?</p>
                     <Link
@@ -93,3 +96,9 @@ class Result extends Component {
 }
 
 export default Result
+
+Result.protoTypes = {
+    resetQuiz: PropTypes.func.isRequired,
+    userHouse: PropTypes.object.isRequired,
+    userName: PropTypes.string.isRequired
+}

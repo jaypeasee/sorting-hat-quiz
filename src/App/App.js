@@ -4,7 +4,8 @@ import Name from '../Name/Name'
 import Question from '../Question/Question'
 import Result from '../Result/Result'
 import Error from '../Error/Error'
-import { getHogwartsHouses } from '../utilities'
+import { getHogwartsHouses } from '../apiCalls'
+import { cleanHouseData } from '../utilities'
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
@@ -23,7 +24,7 @@ class App extends Component {
   componentDidMount() {
     getHogwartsHouses()
       .then(data => this.setState({
-        hogwartsHouses: data,
+        hogwartsHouses: cleanHouseData(data),
         houseFetchError: ""
       }))
       .catch(error => this.setState({

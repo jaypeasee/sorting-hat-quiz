@@ -1,6 +1,7 @@
 import './Question.scss'
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 class Question extends Component {
     constructor(props) {
@@ -81,3 +82,10 @@ class Question extends Component {
 }
 
 export default Question
+
+Question.protoTypes = {
+    determineUserHouse: PropTypes.func.isRequired,
+    hogwartsHouses: PropTypes.array.isRequired,
+    questionNumber: PropTypes.number.isRequired,
+    tallyQuestionResults: PropTypes.func.isRequired
+}

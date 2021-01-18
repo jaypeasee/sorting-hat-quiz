@@ -3,7 +3,7 @@ const getHogwartsHouses = () => {
     headers: {
       "Target-URL": "https://potter-server.herokuapp.com/api/v1/houses",
     },
-  }).then((response) => response.json());
+  }).then((response) => response.json())
 };
 
 const getAllCharacters = () => {
@@ -11,7 +11,7 @@ const getAllCharacters = () => {
     headers: {
       "Target-URL": "https://potter-server.herokuapp.com/api/v1/characters",
     },
-  }).then((response) => response.json());
-};
+  }).then((response) => response.json())
+}
 
-export { getHogwartsHouses, getAllCharacters };
+export { getHogwartsHouses, getAllCharacters }

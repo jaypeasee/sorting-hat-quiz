@@ -50,7 +50,7 @@ class Result extends Component {
             <section 
                 className={name && name.toLowerCase()}
             >
-                {!this.state.resultError && name &&
+                { !this.state.resultError && name &&
                 <section className="result-announcement">
                     <div className="announcement-txt">
                         <h1>{`${name.toUpperCase()}!`}</h1>
@@ -85,11 +85,11 @@ class Result extends Component {
                         alt="Minerva McGonagall"
                         className="mcgonagall-img"
                     />
-                </section>}
-                {this.state.resultError || !this.props.userHouse &&
+                </section> }
+                { this.state.resultError || !this.props.userHouse &&
                 <Error 
                     errorMessage="Sorry, something went wrong."
-                />}
+                /> }
             </section>
         )
     }

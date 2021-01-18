@@ -37,6 +37,7 @@
 
 1. Shake up the order of the quiz answers dynamically. Right now all corresponding Gryffindor answers for each question are answer 1, and all Ravenclaw answers for each question are answer 4, etc.
 2. Add a question and logic that gives the user the ability to choose one house they DON'T to be sorted into.
+3. Weight the logic so that some answers are more important than others.
 
 ## Contributors
 

@@ -21,7 +21,7 @@
 * `Node Package Manager`
 * `SCSS`
 *  `React Library`
-* `propTypes` for type checking
+* `propTypes`
 * `React Router`
 
 ### Testing:

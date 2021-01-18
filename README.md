@@ -6,8 +6,8 @@
 
 ## How To Use This Application
 
-1. Clone down [this repository](https://github.com/jaypeasee/sorting-hat-quiz) to your local machine with `git clone <your SSH key>`
-2. Change into the directory with `cd sorting-hat-quiz`
+1. Clone down [this repository](https://github.com/jaypeasee/sorting-hat-quiz) to your local machine with `git clone <your SSH key>`.
+2. Change into the directory with `cd sorting-hat-quiz`.
 3. Run `npm install` to compile the application.
 4. Run `npm start` to see application running on a local host.
 5. Run `npm test` to see all the passing tests.

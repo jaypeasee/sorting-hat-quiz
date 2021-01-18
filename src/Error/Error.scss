@@ -17,3 +17,19 @@
 .error-btn {
     @include btn;
 }
+
+@media only screen and (max-width: 450px) {
+    .error-section h1 {
+        text-align: center;
+        margin: 0 5%;
+    }
+
+    .error-btn-anchor {
+        width: 95%;
+        margin: 5%;
+    }
+
+    .error-btn {
+        font-size: 1em;
+    }
+}

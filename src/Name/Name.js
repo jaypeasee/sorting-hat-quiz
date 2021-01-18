@@ -48,21 +48,20 @@ class Name extends Component {
                     value={ this.state.nameInput }
                     className="name-input"
                 />
-                {this.state.nameInput &&
+                { this.state.nameInput &&
                 <button 
                     className="name-btn"
                     data-testid="enabled-name-btn"
                 >
-                Enroll!</button>
-                }
-                {!this.state.nameInput &&
+                Enroll!</button> }
+                { !this.state.nameInput &&
                 <button 
                     className="disabled-name-btn"
                     data-testid="disabled-name-btn"
                 >
                 Enroll!</button>}
-                {this.state.formInvalid && 
-                <p>Please enter your name before continuing</p>}
+                { this.state.formInvalid && 
+                <p>Please enter your name before continuing</p> }
             </form>
         )
     }

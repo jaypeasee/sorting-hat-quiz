@@ -93,8 +93,18 @@
         width: 250px;
         margin-top: 2%;
     }
+}
 
-    .gryffindor, .hufflepuff, .slytherin, .ravenclaw {
-        height: 170vh;
+@media only screen and (max-width: 500px) {
+    .restart-btn-anchor {
+        width: 90%;
+    }
+
+    .announcement-txt h2 {
+        text-align: center;
+    }
+
+    .mcgonagall-img {
+        width: 200px;
     }
 }

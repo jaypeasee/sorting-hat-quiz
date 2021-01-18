@@ -1,53 +1,52 @@
-@import '../mixins.scss';
-@import '../variables.scss';
+@import "../mixins.scss";
 
 .intro-section {
-    @include column-center;
-    margin: 5%;
+	@include column-center;
+	margin: 5%;
 }
 
 .intro-content {
-    @include row-wrap-around;
+	@include row-wrap-around;
 }
 
 .sorting-song {
-    @include column;
-    width: 50%;
+	@include column;
+	width: 50%;
 }
 
 .sorting-song h1 {
-    text-align: center;
-    font-size: 2em;
+	text-align: center;
+	font-size: 2em;
 }
 
 .get-sorted-btn-anchor {
-    @include btn-anchor;
+	@include btn-anchor;
 }
 
 .get-sorted-btn {
-    @include btn;
-    width: 100%;
-    padding: 4%;
-    font-size: 1.25em;
+	@include btn;
+	width: 100%;
+	padding: 4%;
+	font-size: 1.25em;
 }
 
 @media only screen and (max-width: 1050px) {
-    .intro-content {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-    
-    .sorting-song {
-        width: 90%;
-    }
+	.intro-content {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	.sorting-song {
+		width: 90%;
+	}
 }
 
 @media only screen and (max-width: 700px) {
-    .sorting-hat-img {
-        height: 200px;
-    }
+	.sorting-hat-img {
+		height: 200px;
+	}
 
-    .get-sorted-btn-anchor {
-        width: 200px;
-    }
+	.get-sorted-btn-anchor {
+		width: 200px;
+	}
 }

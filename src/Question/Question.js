@@ -79,8 +79,8 @@ class Question extends Component {
                             </button>
                         </Link>
                     </section>
-                </section>}
-                {!answerValues.length && <Error errorMessage="Sorry, something went wrong."/>}
+                </section> }
+                { !answerValues.length && <Error errorMessage="Sorry, something went wrong."/> }
             </section>
         )
     }

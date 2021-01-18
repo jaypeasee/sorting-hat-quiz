@@ -1,36 +1,36 @@
-@import '../mixins.scss';
+@import "../mixins.scss";
 
 .question-slide {
-    @include column-center;
-    margin: 5%;
+	@include column-center;
+	margin: 5%;
 }
 
 .question-slide h1 {
-    font-size: 2em;
+	font-size: 2em;
 }
 
 .question-options {
-    @include column-center;
+	@include column-center;
 }
 
 .question-btn-anchor {
-    @include btn-anchor
+	@include btn-anchor;
 }
 
 .question-btn {
-    @include btn;
+	@include btn;
 }
 
 @media only screen and (max-width: 375px) {
-    .question-slide {
-        width: 85%;
-    }
+	.question-slide {
+		width: 85%;
+	}
 
-    .question-slide h1 {
-        text-align: center;
-    }
+	.question-slide h1 {
+		text-align: center;
+	}
 
-    .question-btn-anchor {
-        width: 80%;
-    }
+	.question-btn-anchor {
+		width: 80%;
+	}
 }

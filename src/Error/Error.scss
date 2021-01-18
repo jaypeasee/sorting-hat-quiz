@@ -1,35 +1,35 @@
-@import '../mixins.scss';
+@import "../mixins.scss";
 
 .error-section {
-    width: 100%;
-    padding: 2%;
-    @include column-center;
+	width: 100%;
+	padding: 2%;
+	@include column-center;
 }
 
 .error-section h1 {
-    font-size: 2em;
+	font-size: 2em;
 }
 
 .error-btn-anchor {
-    width: 350px;
+	width: 350px;
 }
 
 .error-btn {
-    @include btn;
+	@include btn;
 }
 
 @media only screen and (max-width: 450px) {
-    .error-section h1 {
-        text-align: center;
-        margin: 0 5%;
-    }
+	.error-section h1 {
+		text-align: center;
+		margin: 0 5%;
+	}
 
-    .error-btn-anchor {
-        width: 95%;
-        margin: 5%;
-    }
+	.error-btn-anchor {
+		width: 95%;
+		margin: 5%;
+	}
 
-    .error-btn {
-        font-size: 1em;
-    }
+	.error-btn {
+		font-size: 1em;
+	}
 }

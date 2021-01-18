@@ -1,110 +1,110 @@
-@import '../mixins.scss';
-@import '../variables.scss';
+@import "../mixins.scss";
+@import "../variables.scss";
 
 .gryffindor {
-    @include result-page;
-    color: $gold;
-    background-color: $red;
+	@include result-page;
+	color: $gold;
+	background-color: $red;
 }
 
 .gryffindor .restart-btn {
-    @include btn;
-    background-color: $gold;
-    color: $red;
-    border-color: $black;
+	@include btn;
+	background-color: $gold;
+	color: $red;
+	border-color: $black;
 }
 
 .hufflepuff {
-    @include result-page;
-    color: $yellow;
-    background-color: $black;
+	@include result-page;
+	color: $yellow;
+	background-color: $black;
 }
 
 .hufflepuff .restart-btn {
-    @include btn;
-    color: $black;
-    background-color: $yellow;
-    border-color: $yellow;
+	@include btn;
+	color: $black;
+	background-color: $yellow;
+	border-color: $yellow;
 }
 
 .ravenclaw {
-    @include result-page;
-    color: $bronze;
-    background-color: $blue;
+	@include result-page;
+	color: $bronze;
+	background-color: $blue;
 }
 
 .ravenclaw .restart-btn {
-    @include btn;
-    color: $blue;
-    background-color: $bronze;
-    border-color: $black;
+	@include btn;
+	color: $blue;
+	background-color: $bronze;
+	border-color: $black;
 }
 
 .slytherin {
-    @include result-page;
-    color: $silver;
-    background-color: $green;
+	@include result-page;
+	color: $silver;
+	background-color: $green;
 }
 
 .slytherin .restart-btn {
-    @include btn;
-    color: $green;
-    background-color: $silver;
-    border-color: $black;
+	@include btn;
+	color: $green;
+	background-color: $silver;
+	border-color: $black;
 }
 
 .result-announcement {
-    @include row-wrap-around;
+	@include row-wrap-around;
 }
 
 .announcement-txt {
-    @include column-center;
-    width: 50%;
+	@include column-center;
+	width: 50%;
 }
 
 .announcement-txt h1 {
-    font-size: 2em;
+	font-size: 2em;
 }
 
 .mcgonagall-img {
-    width: 40%;
+	width: 40%;
 }
 
 .restart-txt {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .restart-btn-anchor {
-    @include btn-anchor;
-    margin-top: 0;
+	@include btn-anchor;
+	margin-top: 0;
 }
 
 @media only screen and (max-width: 950px) {
-    .result-announcement {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-    
-    .announcement-txt {
-        width: 90%;
-    }
+	.result-announcement {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
 
-    .mcgonagall-img {
-        width: 250px;
-        margin-top: 2%;
-    }
+	.announcement-txt {
+		width: 90%;
+	}
+
+	.mcgonagall-img {
+		width: 250px;
+		margin-top: 2%;
+	}
 }
 
 @media only screen and (max-width: 500px) {
-    .restart-btn-anchor {
-        width: 90%;
-    }
+	.restart-btn-anchor {
+		width: 90%;
+	}
 
-    .announcement-txt h2 {
-        text-align: center;
-    }
+	.announcement-txt h2 {
+		text-align: center;
+	}
 
-    .mcgonagall-img {
-        width: 200px;
-    }
+	.mcgonagall-img {
+		width: 200px;
+	}
 }

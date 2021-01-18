@@ -20,7 +20,7 @@
 * `JavaScript`
 * `Node Package Manager`
 * `SCSS`
-*  `React`
+*  `React Library`
 * `propTypes` for type checking
 * `React Router`
 

@@ -1,6 +1,6 @@
-import "./Intro.scss";
-import sortingHatImg from "./sortingHat.png";
-import { Link } from "react-router-dom";
+import "./Intro.scss"
+import sortingHatImg from "./sortingHat.png"
+import { Link } from "react-router-dom"
 
 const Intro = () => {
   return (
@@ -39,4 +39,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default Intro

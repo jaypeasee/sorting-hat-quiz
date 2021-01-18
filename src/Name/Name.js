@@ -1,37 +1,37 @@
-import "./Name.scss";
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
+import "./Name.scss"
+import React, { Component } from "react"
+import { withRouter } from "react-router-dom"
+import PropTypes from "prop-types"
 
 class Name extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       nameInput: "",
       formInvalid: false,
-    };
+    }
   }
 
   updateNameInput = (event) => {
     this.setState({
       nameInput: event.target.value,
-    });
-  };
+    })
+  }
 
   handleNameSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     if (!this.state.nameInput) {
       this.setState({
         formInvalid: true,
-      });
+      })
     } else {
       this.props.setUserName(this.state.nameInput);
       this.setState({
         formInvalid: false,
-      });
+      })
       this.props.history.push("/question");
     }
-  };
+  }
 
   render() {
     return (
@@ -59,14 +59,14 @@ class Name extends Component {
           <p>Please enter your name before continuing</p>
         )}
       </form>
-    );
+    )
   }
 }
 
-export default withRouter(Name);
+export default withRouter(Name)
 
 Name.propTypes = {
   setUserName: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
-};
+}

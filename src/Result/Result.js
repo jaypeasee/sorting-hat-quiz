@@ -1,15 +1,15 @@
-import "./Result.scss";
-import Error from "../Error/Error";
-import mcgonagallImg from "./mcgonagall.png";
-import { getAllCharacters } from "../apiCalls";
-import { cleanCharacterData } from "../utilities";
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import "./Result.scss"
+import Error from "../Error/Error"
+import mcgonagallImg from "./mcgonagall.png"
+import { getAllCharacters } from "../apiCalls"
+import { cleanCharacterData } from "../utilities"
+import React, { Component } from "react"
+import { Link } from "react-router-dom"
+import PropTypes from "prop-types"
 
 class Result extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       houseMates: [],
       resultError: false,
@@ -43,7 +43,7 @@ class Result extends Component {
   };
 
   render() {
-    const { userName } = this.props;
+    const { userName } = this.props
     const {
       name,
       founder,
@@ -56,7 +56,7 @@ class Result extends Component {
       value4,
       color1,
       color2,
-    } = this.props.userHouse;
+    } = this.props.userHouse
     return (
       <section className={name && name.toLowerCase()}>
         {!this.state.resultError && name && (
@@ -102,10 +102,10 @@ class Result extends Component {
   }
 }
 
-export default Result;
+export default Result
 
 Result.protoTypes = {
   resetQuiz: PropTypes.func.isRequired,
   userHouse: PropTypes.object.isRequired,
   userName: PropTypes.string.isRequired,
-};
+}

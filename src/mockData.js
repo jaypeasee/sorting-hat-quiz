@@ -24,7 +24,7 @@ export const mockCharacterData = [
     house: "Ravenclaw",
     _id: 61,
   },
-];
+]
 
 export const mockHouseData = [
   {
@@ -83,4 +83,4 @@ export const mockHouseData = [
     value3: "Unimaginative",
     value4: "Plain",
   },
-];
+]

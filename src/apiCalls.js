@@ -4,7 +4,7 @@ const getHogwartsHouses = () => {
       "Target-URL": "https://potter-server.herokuapp.com/api/v1/houses",
     },
   }).then((response) => response.json())
-};
+}
 
 const getAllCharacters = () => {
   return fetch("https://fe-cors-proxy.herokuapp.com", {

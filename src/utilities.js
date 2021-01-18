@@ -1,14 +1,14 @@
 export const cleanCharacterData = (allCharacters, userHouse) => {
   const houseMateDetails = allCharacters.filter((char) => {
     return char.house === userHouse.name;
-  });
+  })
   return houseMateDetails.map((char) => {
     return {
       _id: char._id,
       name: char.name,
-    };
-  });
-};
+    }
+  })
+}
 
 export const cleanHouseData = (allHouses) => {
   return allHouses.map((house) => {
@@ -24,6 +24,6 @@ export const cleanHouseData = (allHouses) => {
       value2: house.value2,
       value3: house.value3,
       value4: house.value4,
-    };
-  });
-};
+    }
+  })
+}

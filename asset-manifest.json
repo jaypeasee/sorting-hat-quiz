@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sorting-hat-quiz/static/css/main.26754a88.chunk.css",
+    "main.js": "/sorting-hat-quiz/static/js/main.7643cedc.chunk.js",
+    "main.js.map": "/sorting-hat-quiz/static/js/main.7643cedc.chunk.js.map",
+    "runtime-main.js": "/sorting-hat-quiz/static/js/runtime-main.e3c2b29b.js",
+    "runtime-main.js.map": "/sorting-hat-quiz/static/js/runtime-main.e3c2b29b.js.map",
+    "static/js/2.f68e4a98.chunk.js": "/sorting-hat-quiz/static/js/2.f68e4a98.chunk.js",
+    "static/js/2.f68e4a98.chunk.js.map": "/sorting-hat-quiz/static/js/2.f68e4a98.chunk.js.map",
+    "index.html": "/sorting-hat-quiz/index.html",
+    "static/css/main.26754a88.chunk.css.map": "/sorting-hat-quiz/static/css/main.26754a88.chunk.css.map",
+    "static/js/2.f68e4a98.chunk.js.LICENSE.txt": "/sorting-hat-quiz/static/js/2.f68e4a98.chunk.js.LICENSE.txt",
+    "static/media/mcgonagall.dcdcf52e.png": "/sorting-hat-quiz/static/media/mcgonagall.dcdcf52e.png",
+    "static/media/sortingHat.1334848a.png": "/sorting-hat-quiz/static/media/sortingHat.1334848a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3c2b29b.js",
+    "static/js/2.f68e4a98.chunk.js",
+    "static/css/main.26754a88.chunk.css",
+    "static/js/main.7643cedc.chunk.js"
+  ]
+}

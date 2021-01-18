@@ -2,7 +2,7 @@
 
 ## Summary
 
-[The Sorting Hat Quiz](https://jaypeasee.github.io/sorting-hat-quiz/) is based on The Harry Potter Hogwarts Sorting Hat, in charge of placing first year students into one of the four Hogwarts houses based on their personality and traits. Using [this API](https://github.com/nicolegooden/potter-server) to retrieve Hogwarts House and Character data, this quiz uses logic to issue consistent results based on user answers. There are four results with unique content and color styling. If the user does not like their result, they can retake the quiz without refreshing the application. This application is appended to the final solo project for Mod 3 at the Turing School of Software and Design. The rough spec and project rubric can be found [here](https://frontend.turing.io/projects/module-3/binary-challenge.html).
+[The Sorting Hat Quiz](https://jaypeasee.github.io/sorting-hat-quiz/) is based on The Harry Potter Hogwarts Sorting Hat, tasked with placing first year students into one of the four Hogwarts' houses based on their personality and traits. Using [this API](https://github.com/nicolegooden/potter-server) to retrieve Hogwarts House and Character data, this quiz uses logic to issue consistent results based on user answers. There are four results with unique content and color styling. If the user does not like their result, they can retake the quiz without refreshing the application. This application is appended to the final solo project for Mod 3 at the Turing School of Software and Design. The rough spec and project rubric can be found [here](https://frontend.turing.io/projects/module-3/binary-challenge.html).
 
 ## How To Use This Application
 

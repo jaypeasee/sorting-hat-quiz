@@ -2,7 +2,7 @@
 @import '../variables.scss';
 
 .gryffindor {
-    @include column-center;
+    @include result-page;
     color: $gold;
     background-color: $red;
 }
@@ -15,8 +15,7 @@
 }
 
 .hufflepuff {
-    @include column-center;
-    height: 100%;
+    @include result-page;
     color: $yellow;
     background-color: $black;
 }
@@ -29,7 +28,7 @@
 }
 
 .ravenclaw {
-    @include column-center;
+    @include result-page;
     color: $bronze;
     background-color: $blue;
 }
@@ -42,7 +41,7 @@
 }
 
 .slytherin {
-    @include column-center;
+    @include result-page;
     color: $silver;
     background-color: $green;
 }
@@ -78,4 +77,34 @@
 .restart-btn-anchor {
     @include btn-anchor;
     margin-top: 0;
+}
+
+@media only screen and (max-width: 950px) {
+    .result-announcement {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    .announcement-txt {
+        width: 90%;
+    }
+
+    .mcgonagall-img {
+        width: 250px;
+        margin-top: 2%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .restart-btn-anchor {
+        width: 90%;
+    }
+
+    .announcement-txt h2 {
+        text-align: center;
+    }
+
+    .mcgonagall-img {
+        width: 200px;
+    }
 }

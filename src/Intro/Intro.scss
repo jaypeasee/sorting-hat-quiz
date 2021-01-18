@@ -26,7 +26,28 @@
 
 .get-sorted-btn {
     @include btn;
-    width: 300px;
+    width: 100%;
     padding: 4%;
     font-size: 1.25em;
+}
+
+@media only screen and (max-width: 1050px) {
+    .intro-content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    .sorting-song {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .sorting-hat-img {
+        height: 200px;
+    }
+
+    .get-sorted-btn-anchor {
+        width: 200px;
+    }
 }

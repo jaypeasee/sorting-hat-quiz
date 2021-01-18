@@ -39,3 +39,8 @@
         transition-duration: 0.4s;
     }
 }
+
+@mixin result-page {
+    @include column-center;
+    height: 100%;
+}

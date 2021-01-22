@@ -5,5 +5,4 @@ notifications:
   email: false
 deploy:
   provider: heroku
-  api_key: ...
   app: sorting-hat-quiz

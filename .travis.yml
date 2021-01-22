@@ -1,8 +1,10 @@
 language: node_js
 node_js:
-  - "node"
+- node
 notifications:
   email: false
 deploy:
   provider: heroku
   app: sorting-hat-quiz
+  api_key:
+    secure: CbnnfZu0WxzHmhFMg86xSjYdcj/d5mq5Bq0jPPfDQmheZdp3rlws980nyy/zZQPNKfaeIn4YOWr5ZsnE3W2eqZG5g3QXq0BhcQys9WhYXwfQvMUywxOvwayYaUT+qGCm+G2k6LPxz33u0Qxf5Ag72Kgr7q+V6Ql1lpOkRVtDRrdEck4k5H72U4TiyU07wU/D9VCbC7qMINKnf2+Wv+sUyszGXhsWx5grxTPJ8tWWk2Sug9drJl/lJMxBNKKLb2ijp0UShgvSSVljhXdpxbv/94rdRDcN1LjmUZIu1hM8WNsXajxbrXro15qGQ0W/yxHSjbhmTTwe+3Uuoq8EXuDtShxMoyoLZQog8uFQPilZ1J+XAuS89lEriDK5YWT9k9P6G10GwjSEtSYVM5ZMJzbPS4bs9Pxput1SuWIacq+kQB0AqOO+kQBI8r7KkSVG546TA4RU8+H4Dq2JJ8N3x7V4n3hbMblEzNApW+K11stgC0yVGzDP3IvmB07DLHHxBAtDEihCUG8mbalBF8EvHZf32wmhr1Hnz5AEXhRdwuKML3sIPJw9++4F610/qUpcdLrlg1b933bGyAaan+y+dQi+FcecEJbmMWgMuY8imX2HSQVmdbfiG4xXIJ3HAxBfa2eWdJJCJQ/r7Y+4yagT5i5N3FvWTfTcE86nNG4cv1TN8KI=

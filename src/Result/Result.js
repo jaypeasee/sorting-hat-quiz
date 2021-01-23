@@ -64,13 +64,13 @@ class Result extends Component {
             <div className="announcement-txt">
               <h1>{`${name.toUpperCase()}!`}</h1>
               <p data-testid="house-description">
-                {`Welcome to ${name}, ${userName}!
-                            Founded by the ${mascot}, ${founder}, and led by Professor ${headOfHouse},
-                            ${name}s are known for their ${value1.toLowerCase()}, ${value2.toLowerCase()}, 
-                            ${value3.toLowerCase()}, and ${value4.toLowerCase()}. Walking through the common, 
-                            you will see lots of ${color1.toLowerCase()} and ${color2.toLowerCase()} 
-                            and ${houseGhost}, the house ghost floating through walls.
-                            While at Hogwarts, your fellow ${name}s will be your family.`}
+                {`to ${name}, ${userName}!
+                  Founded by the ${mascot}, ${founder}, and led by Professor ${headOfHouse},
+                  ${name}s are known for their ${value1.toLowerCase()}, ${value2.toLowerCase()}, 
+                  ${value3.toLowerCase()}, and ${value4.toLowerCase()}. Walking through the common, 
+                  you will see lots of ${color1.toLowerCase()} and ${color2.toLowerCase()} 
+                  and ${houseGhost}, the house ghost floating through walls.
+                  While at Hogwarts, your fellow ${name}s will be your family.`}
               </p>
               <h2>{`Your fellow ${name}s`}</h2>
               <ul>

@@ -8,5 +8,4 @@ deploy:
   app: pure-everglades-20792
   api_key:
     secure: Soy5kkpj/OFBHMkMQ+72e/ifimDrb9BYre5VkBDpODRPe5hZRLnUD78gmyXiR1Uc4aqDH+kmERF+LS1qYVIhzztaeY+ApwTJAxzMo5UrCx5ceEBsP0Aezz2WQS6Akj+C4eAU1whPnK/G6TW6wfzlf8878hn+u2F6XAQKDDSs/nOrNaskznEFpT+OVMQIN+8GX0ayMpu3XK+Pzs9dopSRUTKcaFH83gMbrwPlv9gNpDKB4/PWBbseygAqPdSW6R2aCpBgK0q36d3g/JVat9cKfpITOxcrbMOI890PU004JQzDz3ZBEg1z+1It+2fVcnoWALsagy+AxSVty5epEsL/iidas5oz8b5Tgv/hVfKRMpjK/4AMwTzfwCGgufEDt/K4IwwNymZD44i67of2h/++w2j0W6oal6csjpPnJngvb8c9z5mtBNCAJY8CmTpYzHG648Ymh/xBk1I4gSq66/7bT5m/TOfo0Qbj8RYJsphCSXk4cnYE4wNcaYiA9qJYS8hYKPSYuN1D0YOZ/poAsqNsEH4Sj3nQaB1ImeQVWK8+lguJTEE+c+fcvOKDxkDduXz+w8aTAnpcNlgLbKZ0X4Y1pugRorp1whYZ3t01rOYTygWk0M26ngkRDzhpt2ru9yhBZskcQoLTtXhl455hUtjz01kI6jJg8g/4lXZORZYPtCQ=
-  on:
-    all_branches: true
+  on: main
